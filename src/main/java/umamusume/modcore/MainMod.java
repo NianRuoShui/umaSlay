@@ -22,3 +22,4 @@ public class MainMod implements EditCardsSubscriber {
         BaseMod.addCard(new Strike());
     }
 }
+
