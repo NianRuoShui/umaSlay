@@ -6,18 +6,43 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import umamusume.cards.Strike;
+import com.badlogic.gdx.graphics.Color;
 
 @SpireInitializer //语法糖 总之就是加载mod
 public class MainMod implements EditCardsSubscriber, EditStringsSubscriber {
     //建立一个公共public类class，叫MainMod，要求实现EditCardsSubscriber所定义的方法
+    // 人物选择界面按钮的图片
+    private static final String MY_CHARACTER_BUTTON = "umaResources/img/cards/strike.png";
+    // 人物选择界面的立绘
+    private static final String MY_CHARACTER_PORTRAIT = "umaResources/img/cards/strike.png";
+    // 攻击牌的背景（小尺寸）
+    private static final String BG_ATTACK_512 = "umaResources/img/cards/strike.png";
+    // 能力牌的背景（小尺寸）
+    private static final String BG_POWER_512 = "umaResources/img/cards/strike.png";
+    // 技能牌的背景（小尺寸）
+    private static final String BG_SKILL_512 = "umaResources/img/cards/strike.png";
+    // 在卡牌和遗物描述中的能量图标
+    private static final String SMALL_ORB = "umaResources/img/cards/strike.png";
+    // 攻击牌的背景（大尺寸）
+    private static final String BG_ATTACK_1024 = "umaResources/img/cards/strike.png";
+    // 能力牌的背景（大尺寸）
+    private static final String BG_POWER_1024 = "umaResources/img/cards/strike.png";
+    // 技能牌的背景（大尺寸）
+    private static final String BG_SKILL_1024 = "umaResources/img/cards/strike.png";
+    // 在卡牌预览界面的能量图标
+    private static final String BIG_ORB = "umaResources/img/cards/strike.png";
+    // 小尺寸的能量图标（战斗中，牌堆预览）
+    private static final String ENEYGY_ORB = "umaResources/img/cards/strike.png";
+    // 颜色
+    public static final Color MY_COLOR = new Color(129.0F / 255.0F, 232.0F / 255.0F, 9.0F / 225.0F, 1.0F);
 
     //类MainMod的构造方法，也就是这个类被创建时会被自动调用
     public MainMod(){
         BaseMod.subscribe(this);//通知BaseMod，要求把我们自己(this)进行注册
+        BaseMod.addColor(EXAMPLE_GREEN, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR,BG_ATTACK_512,BG_SKILL_512,BG_POWER_512,ENEYGY_ORB,BG_ATTACK_1024,BG_SKILL_1024,BG_POWER_1024,BIG_ORB,SMALL_ORB);
     }
     //初始化
     public static void initialize(){
-
         new MainMod();
     }
     //编辑卡牌的代码
