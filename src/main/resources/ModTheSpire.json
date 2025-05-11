@@ -1,0 +1,10 @@
+{
+  "modid": "umamod",
+  "name": "umaMod",
+  "author_list": ["Nian, F"],
+  "description": "uma。",
+  "version": "0.0.1",
+  "sts_version": "5-11-2025",
+  "mts_version": "3.23.2",
+  "dependencies": ["basemod"]
+}
