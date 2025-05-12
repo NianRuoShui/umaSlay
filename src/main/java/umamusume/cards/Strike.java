@@ -10,54 +10,49 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-//import static umamusume.characters.uma.PlayerColorEnum.uma_blue;
 import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
 
 public class Strike extends CustomCard {
 
-    public static final String ID = "UmaMod:Strike";
-    private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
-    private static final String NAME = CARD_STRINGS.NAME;
-    private static final String IMG_PATH = "umaResources/img/cards/strike.png";
-    private static final int COST = 1;
-    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
-    private static final CardType TYPE = CardType.ATTACK;
-    private static final CardColor COLOR = Uma_Oguri_Orange;
-    private static final CardRarity RARITY = CardRarity.BASIC;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    public static final String ID = "UmaMod:Strike"; //卡牌ID
+    private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); //本地化描述
+    private static final String NAME = CARD_STRINGS.NAME; //卡牌名称，从本地化抽取
+    private static final String IMG_PATH = "umaResources/img/cards/strike.png"; //图片
+    private static final int COST = 1; //花费
+    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION; //卡牌描述，从本地化中读取
+    private static final CardType TYPE = CardType.ATTACK; // 卡牌类型（攻击、技能、能力）
+    private static final CardColor COLOR = Uma_Oguri_Orange; // 卡牌颜色（与角色颜色一致）
+    private static final CardRarity RARITY = CardRarity.BASIC; // 卡牌稀有度（基础、普通、罕见、稀有、特殊等）
+    private static final CardTarget TARGET = CardTarget.ENEMY; // 卡牌目标（敌人、所有敌人、自身、无目标等）
 
     public Strike(){
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.damage = this.baseDamage = 6;
-        this.tags.add(CardTags.STARTER_STRIKE);
-        this.tags.add(CardTags.STRIKE);
+        this.damage = this.baseDamage = 6; // 基础伤害值
+        this.tags.add(CardTags.STARTER_STRIKE); // 标记为初始卡组中的打击牌
+        this.tags.add(CardTags.STRIKE); // 标记为打击牌（用于其他卡牌效果联动）
     }
 
     public void upgrade(){
         if(!this.upgraded){
-            this.upgradeName();
-            this.upgradeDamage(3);
-//            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
-//            this.initializeDescription();
+            this.upgradeName(); //升级名称 加“+”
+            this.upgradeDamage(3); //加伤害
         }
     }
-
+// p 玩家  m 怪物
     public void use(AbstractPlayer p, AbstractMonster m) {
-//        AbstractDungeon.actionManager.addToBottom(new DamageAction(m,new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL)));
-        if (Settings.isDebug) {
+        if (Settings.isDebug) { //调试
             if (Settings.isInfo) {
                 this.multiDamage = new int[AbstractDungeon.getCurrRoom().monsters.monsters.size()];
 
                 for (int i = 0; i < AbstractDungeon.getCurrRoom().monsters.monsters.size(); ++i) {
                     this.multiDamage[i] = 150;
                 }
-
                 this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
             } else {
                 this.addToBot(new DamageAction(m, new DamageInfo(p, 150, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
             }
         }
-        else {
+        else { //基础伤害
             this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         }
     }

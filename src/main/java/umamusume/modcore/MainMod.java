@@ -1,7 +1,9 @@
 package umamusume.modcore;
 import basemod.BaseMod;
+import basemod.helpers.RelicType;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditCharactersSubscriber;
+import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -9,17 +11,17 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 
+import com.megacrit.cardcrawl.localization.RelicStrings;
 import umamusume.cards.Defend;
 import umamusume.cards.Strike;
 import umamusume.characters.Oguri;
-//import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
+import umamusume.relics.OguriRelicFood;
+
 import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
 import static umamusume.characters.Oguri.PlayerColorEnum.UMA_OGURI;
 
 @SpireInitializer //语法糖 总之就是加载mod
-public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber {
-    //建立一个公共public类class，叫MainMod，要求实现EditCardsSubscriber所定义的方法
-
+public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber, EditRelicsSubscriber {//建立一个公共public类class，叫MainMod，要求实现EditCardsSubscriber所定义的方法
 
     //类MainMod的构造方法，也就是这个类被创建时会被自动调用
     public MainMod() {
@@ -43,23 +45,6 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
                 ResourceManager.SMALL_ORB
         );
 
-        //addColor(AbstractCard.CardColor color,
-        // Color bgColor,
-        // Color backColor,
-        // Color frameColor,
-        // Color frameOutlineColor,
-        // Color descBoxColor,
-        // Color trailVfxColor,
-        // Color glowColor,
-        // String attackBg,
-        // String skillBg,
-        // String powerBg,
-        // String energyOrb,
-        // String attackBgPortrait,
-        // String skillBgPortrait,
-        // String powerBgPortrait,
-        // String energyOrbPortrait,
-        // String cardEnergyOrb)
     }
 
     //初始化
@@ -78,11 +63,11 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
         if (Settings.language == Settings.GameLanguage.ZHS) {
             lang = "ZHS";
         } else {
-//            lang = "ZHS";
-             lang = "ENG";
+            lang = "ENG";
         }
         BaseMod.loadCustomStringsFile(CardStrings.class, "umaResources/localization/" + lang + "/cards.json");
         BaseMod.loadCustomStringsFile(CharacterStrings.class, "umaResources/localization/" + lang + "/characters.json");
+        BaseMod.loadCustomStringsFile(RelicStrings.class, "umaResources/localization/" + lang + "/relics.json");
     }
 
     public void receiveEditCharacters() {
@@ -93,6 +78,9 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
                 UMA_OGURI
         );
 
+    }
+    public void receiveEditRelics() {
+        BaseMod.addRelic(new OguriRelicFood(), RelicType.SHARED); // RelicType表示是所有角色都能拿到的遗物，还是一个角色的独有遗物
     }
 
 }

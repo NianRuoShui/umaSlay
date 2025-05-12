@@ -6,10 +6,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-// import static umamusume.characters.uma.PlayerColorEnum.uma_blue;
 import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
 public class Defend extends CustomCard {
-    //Basic Variables defines
 
     public static final String ID = "UmaMod:Defend";
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -25,8 +23,7 @@ public class Defend extends CustomCard {
     public Defend() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.baseBlock = 5;
-        this.tags.add(CardTags.STARTER_DEFEND); //Actually add a<CardTags.STARTER_DEFEND> to an arraylist called tags
-        //
+        this.tags.add(CardTags.STARTER_DEFEND);
     }
 
     public void upgrade() { //When card upgrade
@@ -37,7 +34,7 @@ public class Defend extends CustomCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (Settings.isDebug) { //In debug
+        if (Settings.isDebug) { //50防
             this.addToBot(new GainBlockAction(p, p, 50));
         }
         else {

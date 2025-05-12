@@ -1,6 +1,5 @@
 package umamusume.characters;
 
-//import static umamusume.characters.uma.PlayerColorEnum.uma_blue;
 import java.util.ArrayList;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -17,12 +16,11 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
-import com.megacrit.cardcrawl.relics.Vajra;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import basemod.abstracts.CustomPlayer;
 import umamusume.cards.Strike;
-import umamusume.modcore.MainMod;
 import umamusume.modcore.ResourceManager;
+import umamusume.relics.OguriRelicFood;
 
 public class Oguri extends CustomPlayer {
     // 火堆的人物立绘（行动前）
@@ -65,25 +63,17 @@ public class Oguri extends CustomPlayer {
     // 初始卡组的ID，可直接写或引用变量
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
-        /*
         for(int x = 0; x < 5 ; x++){
-            retVal.add(Strike.ID);
-            retVal.add(Defend.ID);
-        };
-         */
-        retVal.add("UmaMod:Strike");
-        retVal.add("UmaMod:Defend");
-        retVal.add("UmaMod:Strike");
-        retVal.add("UmaMod:Defend");
-        retVal.add("UmaMod:Strike");
-        retVal.add("UmaMod:Defend");
+            retVal.add("UmaMod:Strike");
+            retVal.add("UmaMod:Defend");
+        }
         return retVal;
     }
 
     //遗物
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(Vajra.ID);//金刚杵
+        retVal.add(OguriRelicFood.ID);//
         return retVal;
     }
 
@@ -96,10 +86,10 @@ public class Oguri extends CustomPlayer {
                 0,// 初始充能球栏位
                 99,// 初始携带金币
                 5,// 每回合抽牌数量
-                this, //教程说别动
+                this, //
                 this.getStartingRelics(), // 初始遗物
                 this.getStartingDeck(),// 初始卡组
-                false //教程说别动
+                false //是否隐藏
         );
     }
 
