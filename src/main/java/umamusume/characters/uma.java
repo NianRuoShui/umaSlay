@@ -63,8 +63,8 @@ public class uma extends CustomPlayer{
             retVal.add(Strike.ID);
             retVal.add(Defend.ID);
         };
-        retVal.add("umaMod:Strike");
-        retVal.add("umaMod:Defend");
+        retVal.add("maMod:Strike");
+        retVal.add("UmaMod:Defend");
         return retVal;
     }
     //遗物
