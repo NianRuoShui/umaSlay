@@ -11,10 +11,10 @@ import com.megacrit.cardcrawl.localization.CharacterStrings;
 
 import umamusume.cards.Defend;
 import umamusume.cards.Strike;
-import umamusume.characters.uma;
-import umamusume.modcore.ResourceManager;
-import static umamusume.characters.uma.PlayerColorEnum.uma_blue;
-import static umamusume.characters.uma.PlayerColorEnum.UMA_CHARACTER;
+import umamusume.characters.Oguri;
+//import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
+import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
+import static umamusume.characters.Oguri.PlayerColorEnum.UMA_OGURI;
 
 @SpireInitializer //语法糖 总之就是加载mod
 public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber {
@@ -24,14 +24,14 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
     //类MainMod的构造方法，也就是这个类被创建时会被自动调用
     public MainMod() {
         BaseMod.subscribe(this);//通知BaseMod，要求把我们自己(this)进行注册
-        BaseMod.addColor(uma_blue,
-                ResourceManager.MY_COLOR.cpy(),
-                ResourceManager.MY_COLOR.cpy(),
-                ResourceManager.MY_COLOR.cpy(),
-                ResourceManager.MY_COLOR.cpy(),
-                ResourceManager.MY_COLOR.cpy(),
-                ResourceManager.MY_COLOR.cpy(),
-                ResourceManager.MY_COLOR.cpy(),
+        BaseMod.addColor(Uma_Oguri_Orange,
+                ResourceManager.UMA_COLOR.cpy(),
+                ResourceManager.UMA_COLOR.cpy(),
+                ResourceManager.UMA_COLOR.cpy(),
+                ResourceManager.UMA_COLOR.cpy(),
+                ResourceManager.UMA_COLOR.cpy(),
+                ResourceManager.UMA_COLOR.cpy(),
+                ResourceManager.UMA_COLOR.cpy(),
                 ResourceManager.BG_ATTACK_512,
                 ResourceManager.BG_SKILL_512,
                 ResourceManager.BG_POWER_512,
@@ -87,11 +87,12 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
 
     public void receiveEditCharacters() {
         // 向basemod注册人物
-        BaseMod.addCharacter(new uma(CardCrawlGame.playerName),
-                ResourceManager.MY_CHARACTER_BUTTON,
-                ResourceManager.MY_CHARACTER_PORTRAIT,
-                UMA_CHARACTER
+        BaseMod.addCharacter(new Oguri(CardCrawlGame.playerName),
+                ResourceManager.UMA_OGURI_BUTTON,
+                ResourceManager.UMA_OGURI_PORTRAIT,
+                UMA_OGURI
         );
+
     }
 
 }

@@ -1,13 +1,13 @@
 package umamusume.modcore;
 
 import com.badlogic.gdx.graphics.Color;
-//import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.helpers.CardHelper;
 
 public class ResourceManager {
     // 人物选择界面按钮的图片
-    public static final String MY_CHARACTER_BUTTON = "umaResources/img/cards/strike.png";
+    public static final String UMA_OGURI_BUTTON = "umaResources/img/cards/strike.png";
     // 人物选择界面的立绘
-    public static final String MY_CHARACTER_PORTRAIT = "umaResources/img/cards/strike.png";
+    public static final String UMA_OGURI_PORTRAIT = "umaResources/img/cards/strike.png";
     // 攻击牌的背景（小尺寸）
     public static final String BG_ATTACK_512 = "umaResources/img/cards/strike.png";
     // 能力牌的背景（小尺寸）
@@ -29,8 +29,8 @@ public class ResourceManager {
     // 颜色
 
     //
-    public static final Color MY_COLOR = new Color(129.0F / 255.0F, 232.0F / 255.0F, 9.0F / 225.0F, 1.0F);
+ //    public static final Color MY_COLOR = new Color(129.0F / 255.0F, 232.0F / 255.0F, 9.0F / 225.0F, 1.0F);
     // Actually these two method has same function
-//    public static final Color UMA_COLOR = CardHelper.getColor(129.0F, 232.0F, 9.0F);
+    public static final Color UMA_COLOR = CardHelper.getColor(251.0F, 205.0F, 85.0F);
     //
 }
