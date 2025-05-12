@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 
+import umamusume.cards.Defend;
 import umamusume.cards.Strike;
 import umamusume.characters.uma;
 
@@ -17,7 +18,7 @@ import static umamusume.characters.uma.PlayerColorEnum.uma_blue;
 import static umamusume.characters.uma.PlayerColorEnum.UMA_CHARACTER;
 
 @SpireInitializer //语法糖 总之就是加载mod
-public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber  {
+public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber {
     //建立一个公共public类class，叫MainMod，要求实现EditCardsSubscriber所定义的方法
     // 人物选择界面按钮的图片
     private static final String MY_CHARACTER_BUTTON = "umaResources/img/cards/strike.png";
@@ -45,24 +46,27 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
     public static final Color MY_COLOR = new Color(129.0F / 255.0F, 232.0F / 255.0F, 9.0F / 225.0F, 1.0F);
 
     //类MainMod的构造方法，也就是这个类被创建时会被自动调用
-    public MainMod(){
+    public MainMod() {
         BaseMod.subscribe(this);//通知BaseMod，要求把我们自己(this)进行注册
-        BaseMod.addColor(uma_blue, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR,BG_ATTACK_512,BG_SKILL_512,BG_POWER_512,ENEYGY_ORB,BG_ATTACK_1024,BG_SKILL_1024,BG_POWER_1024,BIG_ORB,SMALL_ORB);
-    }
-    //初始化
-    public static void initialize(){
-        new MainMod();
-    }
-    //编辑卡牌的代码
-    public void receiveEditCards(){
-        BaseMod.addCard(new Strike());
+        BaseMod.addColor(uma_blue, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, BG_ATTACK_512, BG_SKILL_512, BG_POWER_512, ENEYGY_ORB, BG_ATTACK_1024, BG_SKILL_1024, BG_POWER_1024, BIG_ORB, SMALL_ORB);
     }
 
-    public void receiveEditStrings(){
+    //初始化
+    public static void initialize() {
+        new MainMod();
+    }
+
+    //编辑卡牌的代码
+    public void receiveEditCards() {
+        BaseMod.addCard(new Strike());
+        BaseMod.addCard(new Defend());
+    }
+
+    public void receiveEditStrings() {
         String lang;
-        if (Settings.language == Settings.GameLanguage.ZHS){
+        if (Settings.language == Settings.GameLanguage.ZHS) {
             lang = "ZHS";
-        }else{
+        } else {
             lang = "ENG";
         }
         BaseMod.loadCustomStringsFile(CardStrings.class, "resources/localization/" + lang + "/cards.json");
@@ -73,6 +77,6 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
         // 向basemod注册人物
         BaseMod.addCharacter(new uma(CardCrawlGame.playerName), MY_CHARACTER_BUTTON, MY_CHARACTER_PORTRAIT, UMA_CHARACTER);
     }
-    
+
 }
 

@@ -24,6 +24,7 @@ import com.megacrit.cardcrawl.relics.Vajra;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
 import basemod.abstracts.CustomPlayer;
+import umamusume.cards.Defend;
 import umamusume.cards.Strike;
 import umamusume.modcore.MainMod;
 
@@ -60,8 +61,10 @@ public class uma extends CustomPlayer{
         ArrayList<String> retVal = new ArrayList<>();
         for(int x = 0; x <5 ; x++){
             retVal.add(Strike.ID);
+            retVal.add(Defend.ID);
         };
         retVal.add("umaMod:Strike");
+        retVal.add("umaMod:Defend");
         return retVal;
     }
     //遗物
