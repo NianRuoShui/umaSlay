@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import static umamusume.characters.uma.PlayerColorEnum.uma_blue;
+
 
 public class Defend extends CustomCard {
     //Basic Variables defines
@@ -18,7 +20,7 @@ public class Defend extends CustomCard {
     private static final int COST = 1;
     private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardColor COLOR = CardColor.COLORLESS;
+    private static final CardColor COLOR = uma_blue;
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.SELF;
 

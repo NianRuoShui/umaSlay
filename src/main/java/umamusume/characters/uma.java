@@ -20,7 +20,6 @@ import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.relics.Vajra;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import basemod.abstracts.CustomPlayer;
-import umamusume.cards.Defend;
 import umamusume.cards.Strike;
 import umamusume.modcore.MainMod;
 
@@ -64,12 +63,17 @@ public class uma extends CustomPlayer{
     // 初始卡组的ID，可直接写或引用变量
     public ArrayList<String> getStartingDeck(){
         ArrayList<String> retVal = new ArrayList<>();
+        /*
         for(int x = 0; x < 5 ; x++){
             retVal.add(Strike.ID);
             retVal.add(Defend.ID);
         };
+         */
         retVal.add("UmaMod:Strike");
         retVal.add("UmaMod:Defend");
+        retVal.add("UmaMod:Strike");
+        retVal.add("UmaMod:Defend");
+        retVal.add("UmaMod:Strike");
         return retVal;
     }
     //遗物

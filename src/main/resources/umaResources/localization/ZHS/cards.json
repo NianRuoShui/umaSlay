@@ -8,7 +8,7 @@
 
   "UmaMod:Defend": {
     "NAME": "防御",
-    "DESCRIPTION": "造成 !D! 点伤害"
+    "DESCRIPTION": "获得 !B! 点防御"
   }
 
 }
