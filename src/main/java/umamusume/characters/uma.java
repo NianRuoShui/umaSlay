@@ -22,6 +22,7 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import basemod.abstracts.CustomPlayer;
 import umamusume.cards.Strike;
 import umamusume.modcore.MainMod;
+import umamusume.modcore.ResourceManager;
 
 // 继承CustomPlayer类
 public class uma extends CustomPlayer{
@@ -112,7 +113,7 @@ public class uma extends CustomPlayer{
     }
     // 卡牌轨迹颜色
     public Color getCardTrailColor(){
-        return MainMod.MY_COLOR;
+        return ResourceManager.MY_COLOR;
     }
     // 高进阶带来的生命值损失
     public int getAscensionMaxHPLoss(){
@@ -153,7 +154,7 @@ public class uma extends CustomPlayer{
     }
     // 打心脏的颜色
     public Color getSlashAttackColor() {
-        return MainMod.MY_COLOR;
+        return ResourceManager.MY_COLOR;
     }
     // 吸血鬼事件文本
     public String getVampireText() {
@@ -161,7 +162,7 @@ public class uma extends CustomPlayer{
     }
     // 卡牌选择界面选择该牌的颜色
     public Color getCardRenderColor() {
-        return MainMod.MY_COLOR;
+        return ResourceManager.MY_COLOR;
     }
     // 第三章面对心脏造成伤害时的特效
     public AbstractGameAction.AttackEffect[] getSpireHeartSlashEffect() {
