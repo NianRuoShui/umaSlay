@@ -1,15 +1,23 @@
 package umamusume.modcore; //当前java文件被引用时的名字
 import basemod.BaseMod;    //导入
 import basemod.interfaces.EditCardsSubscriber;
+import basemod.interfaces.EditCharactersSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.localization.CharacterStrings;
+
 import umamusume.cards.Strike;
+import umamusume.characters.uma;
+
 import com.badlogic.gdx.graphics.Color;
+import static umamusume.characters.uma.PlayerColorEnum.uma_blue;
+import static umamusume.characters.uma.PlayerColorEnum.UMA_CHARACTER;
 
 @SpireInitializer //语法糖 总之就是加载mod
-public class MainMod implements EditCardsSubscriber, EditStringsSubscriber {
+public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber  {
     //建立一个公共public类class，叫MainMod，要求实现EditCardsSubscriber所定义的方法
     // 人物选择界面按钮的图片
     private static final String MY_CHARACTER_BUTTON = "umaResources/img/cards/strike.png";
@@ -39,7 +47,7 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber {
     //类MainMod的构造方法，也就是这个类被创建时会被自动调用
     public MainMod(){
         BaseMod.subscribe(this);//通知BaseMod，要求把我们自己(this)进行注册
-        BaseMod.addColor(EXAMPLE_GREEN, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR,BG_ATTACK_512,BG_SKILL_512,BG_POWER_512,ENEYGY_ORB,BG_ATTACK_1024,BG_SKILL_1024,BG_POWER_1024,BIG_ORB,SMALL_ORB);
+        BaseMod.addColor(uma_blue, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR,BG_ATTACK_512,BG_SKILL_512,BG_POWER_512,ENEYGY_ORB,BG_ATTACK_1024,BG_SKILL_1024,BG_POWER_1024,BIG_ORB,SMALL_ORB);
     }
     //初始化
     public static void initialize(){
@@ -58,6 +66,13 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber {
             lang = "ENG";
         }
         BaseMod.loadCustomStringsFile(CardStrings.class, "resources/localization/" + lang + "/cards.json");
+        BaseMod.loadCustomStringsFile(CharacterStrings.class, "ExampleResources/localization/" + lang + "/characters.json");
     }
+
+    public void receiveEditCharacters() {
+        // 向basemod注册人物
+        BaseMod.addCharacter(new uma(CardCrawlGame.playerName), MY_CHARACTER_BUTTON, MY_CHARACTER_PORTRAIT, UMA_CHARACTER);
+    }
+    
 }
 
