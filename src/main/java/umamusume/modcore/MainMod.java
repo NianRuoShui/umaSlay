@@ -63,10 +63,11 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
         if (Settings.language == Settings.GameLanguage.ZHS){
             lang = "ZHS";
         }else{
-            lang = "ENG";
+            lang = "ZHS";
+            // lang = "ENG";
         }
-        BaseMod.loadCustomStringsFile(CardStrings.class, "resources/localization/" + lang + "/cards.json");
-        BaseMod.loadCustomStringsFile(CharacterStrings.class, "ExampleResources/localization/" + lang + "/characters.json");
+        BaseMod.loadCustomStringsFile(CardStrings.class, "umaResources/localization/" + lang + "/cards.json");
+        BaseMod.loadCustomStringsFile(CharacterStrings.class, "umaResources/localization/" + lang + "/characters.json");
     }
 
     public void receiveEditCharacters() {

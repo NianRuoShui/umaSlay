@@ -40,7 +40,7 @@ public class uma extends CustomPlayer{
 
     };
     private static final float[] LAYER_SPEED = new float[]{-40.0F, -32.0F, 20.0F, -20.0F, 0.0F, -10.0F, -8.0F, 5.0F, -5.0F, 0.0F};
-    private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString("umaMod:MyCharacter");
+    private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString("umaMod:uma");
     public uma(String name){
         super(name, PlayerColorEnum.UMA_CHARACTER, ORB_TEXTURES,"umaResources/img/char/shoulder1.png", LAYER_SPEED, null, null);
         this.dialogX = (this.drawX + 0.0F * Settings.scale);

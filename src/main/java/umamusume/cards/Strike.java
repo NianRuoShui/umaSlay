@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import static umamusume.characters.uma.PlayerColorEnum.uma_blue;
 
 public class Strike extends CustomCard {
 
@@ -20,7 +21,8 @@ public class Strike extends CustomCard {
     private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
 //    private static final String DESCRIPTION = "造成 !D! 点伤害";
     private static final CardType TYPE = CardType.ATTACK;
-    private static final CardColor COLOR = CardColor.COLORLESS;
+    // private static final CardColor COLOR = CardColor.COLORLESS;
+    private static final CardColor COLOR = uma_blue;
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget Target = CardTarget.ENEMY;
 
