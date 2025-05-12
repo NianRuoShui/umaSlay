@@ -1,5 +1,5 @@
-package umamusume.modcore; //当前java文件被引用时的名字
-import basemod.BaseMod;    //导入
+package umamusume.modcore;
+import basemod.BaseMod;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditCharactersSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
@@ -8,10 +8,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
-
 import umamusume.cards.Strike;
 import umamusume.characters.uma;
-
 import com.badlogic.gdx.graphics.Color;
 import static umamusume.characters.uma.PlayerColorEnum.uma_blue;
 import static umamusume.characters.uma.PlayerColorEnum.UMA_CHARACTER;
@@ -57,7 +55,7 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
     public void receiveEditCards(){
         BaseMod.addCard(new Strike());
     }
-
+    //本地化
     public void receiveEditStrings(){
         String lang;
         if (Settings.language == Settings.GameLanguage.ZHS){

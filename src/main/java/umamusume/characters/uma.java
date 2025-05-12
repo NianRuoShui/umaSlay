@@ -1,9 +1,7 @@
 package umamusume.characters;
 
 import static umamusume.characters.uma.PlayerColorEnum.uma_blue;
-
 import java.util.ArrayList;
-
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
@@ -21,10 +19,10 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.relics.Vajra;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
-
 import basemod.abstracts.CustomPlayer;
 import umamusume.cards.Strike;
 import umamusume.modcore.MainMod;
+
 // 继承CustomPlayer类
 public class uma extends CustomPlayer{
     // 火堆的人物立绘（行动前）
@@ -68,7 +66,7 @@ public class uma extends CustomPlayer{
         for(int x = 0; x < 5 ; x++){
             retVal.add(Strike.ID);
         };
-        retVal.add("umaMod:Strike");
+        retVal.add("UmaMod:Strike");
         return retVal;
     }
     //遗物
