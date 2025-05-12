@@ -1,5 +1,4 @@
 package umamusume.cards;
-
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -7,10 +6,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
 import static umamusume.characters.uma.PlayerColorEnum.uma_blue;
-
-
 public class Defend extends CustomCard {
     //Basic Variables defines
 
@@ -42,10 +38,9 @@ public class Defend extends CustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (Settings.isDebug) { //In debug
             this.addToBot(new GainBlockAction(p, p, 50));
-        } //Bot means Bottom？
+        }
         else {
             this.addToBot(new GainBlockAction(p, p, this.block));
-            //this.block = this.baseBlock
         }
     }
 
