@@ -50,7 +50,7 @@ public class Oguri extends CustomPlayer {
         this.dialogY = (this.drawY + 150.0F * Settings.scale);
         // 初始化你的人物
         this.initializeClass(
-                "umaResources/img/char/shoulder1.png", // 人物图片
+                "umaResources/img/char/Oguri.png", // 人物图片
                 UMA_OGURI_SHOULDER_2, UMA_OGURI_SHOULDER_1,
                 COPRSE_IMAGE, // 人物死亡图像
                 this.getLoadout(),
