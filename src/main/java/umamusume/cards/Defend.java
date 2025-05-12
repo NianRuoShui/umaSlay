@@ -13,6 +13,7 @@ import static umamusume.characters.uma.PlayerColorEnum.uma_blue;
 
 public class Defend extends CustomCard {
     //Basic Variables defines
+
     public static final String ID = "UmaMod:Defend";
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;

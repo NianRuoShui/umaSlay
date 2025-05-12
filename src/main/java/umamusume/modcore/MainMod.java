@@ -40,7 +40,8 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
                 ResourceManager.BG_SKILL_1024,
                 ResourceManager.BG_POWER_1024,
                 ResourceManager.BIG_ORB,
-                ResourceManager.SMALL_ORB);
+                ResourceManager.SMALL_ORB
+        );
 
         //addColor(AbstractCard.CardColor color,
         // Color bgColor,
