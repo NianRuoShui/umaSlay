@@ -48,6 +48,8 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
     public MainMod() {
         BaseMod.subscribe(this);//通知BaseMod，要求把我们自己(this)进行注册
         BaseMod.addColor(uma_blue, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, MY_COLOR, BG_ATTACK_512, BG_SKILL_512, BG_POWER_512, ENEYGY_ORB, BG_ATTACK_1024, BG_SKILL_1024, BG_POWER_1024, BIG_ORB, SMALL_ORB);
+
+        //addColor(AbstractCard.CardColor color, Color bgColor, Color backColor, Color frameColor, Color frameOutlineColor, Color descBoxColor, Color trailVfxColor, Color glowColor, String attackBg, String skillBg, String powerBg, String energyOrb, String attackBgPortrait, String skillBgPortrait, String powerBgPortrait, String energyOrbPortrait, String cardEnergyOrb)
     }
 
     //初始化
