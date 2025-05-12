@@ -1,5 +1,5 @@
-package umamusume.modcore; //当前java文件被引用时的名字
-import basemod.BaseMod;    //导入
+package umamusume.modcore;
+import basemod.BaseMod;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditCharactersSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.localization.CharacterStrings;
 import umamusume.cards.Defend;
 import umamusume.cards.Strike;
 import umamusume.characters.uma;
-
 import com.badlogic.gdx.graphics.Color;
 import static umamusume.characters.uma.PlayerColorEnum.uma_blue;
 import static umamusume.characters.uma.PlayerColorEnum.UMA_CHARACTER;
@@ -61,16 +60,17 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
         BaseMod.addCard(new Strike());
         BaseMod.addCard(new Defend());
     }
-
+    //本地化
     public void receiveEditStrings() {
         String lang;
         if (Settings.language == Settings.GameLanguage.ZHS) {
             lang = "ZHS";
         } else {
-            lang = "ENG";
+            lang = "ZHS";
+            // lang = "ENG";
         }
-        BaseMod.loadCustomStringsFile(CardStrings.class, "resources/localization/" + lang + "/cards.json");
-        BaseMod.loadCustomStringsFile(CharacterStrings.class, "ExampleResources/localization/" + lang + "/characters.json");
+        BaseMod.loadCustomStringsFile(CardStrings.class, "umaResources/localization/" + lang + "/cards.json");
+        BaseMod.loadCustomStringsFile(CharacterStrings.class, "umaResources/localization/" + lang + "/characters.json");
     }
 
     public void receiveEditCharacters() {
