@@ -9,23 +9,23 @@ public class ResourceManager {
     // 人物选择界面的立绘
     public static final String UMA_OGURI_PORTRAIT = "umaResources/img/cards/strike.png";
     // 攻击牌的背景（小尺寸）
-    public static final String BG_ATTACK_512 = "umaResources/img/cards/strike.png";
+    public static final String BG_ATTACK_512 = "umaResources/img/cards/background.png";
     // 能力牌的背景（小尺寸）
-    public static final String BG_POWER_512 = "umaResources/img/cards/strike.png";
+    public static final String BG_POWER_512 = "umaResources/img/cards/background.png";
     // 技能牌的背景（小尺寸）
-    public static final String BG_SKILL_512 = "umaResources/img/cards/strike.png";
+    public static final String BG_SKILL_512 = "umaResources/img/cards/background.png";
     // 在卡牌和遗物描述中的能量图标
-    public static final String SMALL_ORB = "umaResources/img/cards/strike.png";
+    public static final String SMALL_ORB = "umaResources/img/cards/background.png";
     // 攻击牌的背景（大尺寸）
-    public static final String BG_ATTACK_1024 = "umaResources/img/cards/strike.png";
+    public static final String BG_ATTACK_1024 = "umaResources/img/cards/background.png";
     // 能力牌的背景（大尺寸）
-    public static final String BG_POWER_1024 = "umaResources/img/cards/strike.png";
+    public static final String BG_POWER_1024 = "umaResources/img/cards/background.png";
     // 技能牌的背景（大尺寸）
-    public static final String BG_SKILL_1024 = "umaResources/img/cards/strike.png";
+    public static final String BG_SKILL_1024 = "umaResources/img/cards/background.png";
     // 在卡牌预览界面的能量图标
-    public static final String BIG_ORB = "umaResources/img/cards/strike.png";
+    public static final String BIG_ORB = "umaResources/img/cards/background.png";
     // 小尺寸的能量图标（战斗中，牌堆预览）
-    public static final String ENEYGY_ORB = "umaResources/img/cards/strike.png";
+    public static final String ENEYGY_ORB = "umaResources/img/cards/background.png";
     // 颜色
 
     //
