@@ -67,6 +67,8 @@ public class Oguri extends CustomPlayer {
             retVal.add("UmaMod:Strike");
             retVal.add("UmaMod:Defend");
         }
+        retVal.add("UmaMod:StrikeAll");
+        retVal.add("UmaMod:StrikeAll");
         return retVal;
     }
 

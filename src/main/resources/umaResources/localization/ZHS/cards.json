@@ -9,6 +9,12 @@
   "UmaMod:Defend": {
     "NAME": "防御",
     "DESCRIPTION": "获得 !B! 点防御"
+  },
+
+  "UmaMod:StrikeAll":{
+    "NAME": "踢击",
+    "DESCRIPTION": "造成 !D! 点伤害给所有敌人",
+    "UPGRADE_DESCRIPTION": "固有。 NL 造成 !D! 点伤害给所有敌人"
   }
 
 }
