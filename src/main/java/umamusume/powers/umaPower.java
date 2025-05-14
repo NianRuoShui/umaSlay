@@ -5,6 +5,7 @@ import java.util.Random;
 
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -39,17 +40,19 @@ public class umaPower extends AbstractPower {
         ArrayList<AbstractCard> foodCards = new ArrayList<>();
         Random t = new Random();
         // 检查敌人是否被斩杀
-        if (monster.currentHealth <= 0){
+        if (monster.currentHealth <= 0 || monster.isDying ){
         // if (monster.currentHealth <= 0 && !monster.halfDead && !monster.isDying) {
             System.out.println("敌人被斩杀了！");
-            // 在下一回合生成食物牌
+            // 生成食物牌
             for (AbstractCard card : CardLibrary.getAllCards()) {
-            if (card.tags.contains(Uma_Oguri_food)) {
-                foodCards.add(card);
-                System.out.println(foodCards);
+                if (card.tags.contains(Uma_Oguri_food)) {
+                    foodCards.add(card);
             }
             AbstractCard foodCard = foodCards.get(t.nextInt(foodCards.size())).makeStatEquivalentCopy();
-            this.addToBot(new MakeTempCardInDrawPileAction(foodCard, this.amount, true, true));
+            // this.addToBot(new MakeTempCardInDrawPileAction(foodCard, this.amount, true, true));
+            this.addToBot(new MakeTempCardInHandAction(foodCard, 1));
+            
+
 
         }
         }
