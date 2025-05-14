@@ -15,6 +15,12 @@
     "NAME": "踢击",
     "DESCRIPTION": "造成 !D! 点伤害给所有敌人",
     "UPGRADE_DESCRIPTION": "固有。 NL 造成 !D! 点伤害给所有敌人"
+  },
+
+  "UmaMod:FoodBurgerMeat":{
+    "NAME": "胡萝卜汉堡肉",
+    "DESCRIPTION": "恢复 !M! 点生命值",
+    "UPGRADE_DESCRIPTION": "固有。 NL 恢复 !M! 点生命值"
   }
 
 }

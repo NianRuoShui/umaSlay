@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.localization.CharacterStrings;
 
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import umamusume.cards.Defend;
+import umamusume.cards.FoodBurgerMeat;
 import umamusume.cards.Strike;
 import umamusume.cards.StrikeAll;
 import umamusume.characters.Oguri;
@@ -58,6 +59,7 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
         BaseMod.addCard(new Strike());
         BaseMod.addCard(new Defend());
         BaseMod.addCard(new StrikeAll());
+        BaseMod.addCard(new FoodBurgerMeat());
     }
     //本地化
     public void receiveEditStrings() {

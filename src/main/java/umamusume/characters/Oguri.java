@@ -69,6 +69,9 @@ public class Oguri extends CustomPlayer {
         }
         retVal.add("UmaMod:StrikeAll");
         retVal.add("UmaMod:StrikeAll");
+        retVal.add("UmaMod:FoodBurgerMeat");
+        retVal.add("UmaMod:FoodBurgerMeat");
+        retVal.add("UmaMod:FoodBurgerMeat");
         return retVal;
     }
 
@@ -205,4 +208,8 @@ public class Oguri extends CustomPlayer {
         public static CardLibrary.LibraryType Uma_Oguri_Orange;
     }
 
+    public static class PlauerTagsEnum {
+        @SpireEnum
+        public static AbstractCard.CardTags Uma_Oguri_food;
+    }
 }
