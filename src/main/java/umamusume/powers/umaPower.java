@@ -37,24 +37,19 @@ public class umaPower extends AbstractPower {
     }
 
 
-    public void onMonsterDeath(AbstractMonster monster) {
+    public void onDeath(AbstractMonster monster) {
         ArrayList<AbstractCard> foodCards = new ArrayList<>();
         Random t = new Random();
-        // 检查敌人是否被斩杀
-        if (monster.currentHealth <= 0 || monster.isDying ){
-        // if (monster.currentHealth <= 0 && !monster.halfDead && !monster.isDying) {
+        if (monster.currentHealth <= 0 && !monster.halfDead && !monster.isDying){
             System.out.println("敌人被斩杀了！");
             // 生成食物牌
             for (AbstractCard card : CardLibrary.getAllCards()) {
                 if (card.tags.contains(Uma_Oguri_food)) {
                     foodCards.add(card);
+                }
             }
             AbstractCard foodCard = foodCards.get(t.nextInt(foodCards.size())).makeStatEquivalentCopy();
             this.addToBot(new MakeTempCardInHandAction(foodCard, 1));
-            
-
-
-        }
         }
     }
 
