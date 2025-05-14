@@ -6,6 +6,7 @@ import java.util.Random;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -49,12 +50,20 @@ public class umaPower extends AbstractPower {
                     foodCards.add(card);
             }
             AbstractCard foodCard = foodCards.get(t.nextInt(foodCards.size())).makeStatEquivalentCopy();
-            // this.addToBot(new MakeTempCardInDrawPileAction(foodCard, this.amount, true, true));
             this.addToBot(new MakeTempCardInHandAction(foodCard, 1));
             
 
 
         }
         }
+    }
+
+    public void atEndOfTurn(boolean isPlayer) {
+        this.amount--;
+        if (this.amount <= 0) {
+            // 如果层数为 0，移除该能力
+            this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+        }
+
     }
 }

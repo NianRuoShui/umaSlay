@@ -30,7 +30,7 @@ public class PrepareTraining extends CustomCard{
 
     public PrepareTraining() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.baseMagicNumber = this.magicNumber = 1; // 每次斩杀生成的食物牌数量
+        this.baseMagicNumber = this.magicNumber = 1;
     }
 
     public void upgrade() { //When card upgrade
