@@ -14,9 +14,9 @@ public class PrepareTraining extends CustomCard{
     private static final String IMG_PATH = "umaResources/img/cards/strike.png";
     private static final int COST = 0;
     private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
-    private static final CardType TYPE = CardType.SKILL;
+    private static final CardType TYPE = CardType.POWER;
     private static final CardColor COLOR = Uma_Oguri_Orange;
-    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.SELF;
 
     public PrepareTraining() {

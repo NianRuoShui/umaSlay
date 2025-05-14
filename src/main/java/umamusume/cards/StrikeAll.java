@@ -20,13 +20,12 @@ public class StrikeAll extends CustomCard {
     private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION; //卡牌描述，从本地化中读取
     private static final CardType TYPE = CardType.ATTACK; // 卡牌类型（攻击、技能、能力）
     private static final CardColor COLOR = Uma_Oguri_Orange; // 卡牌颜色（与角色颜色一致）
-    private static final CardRarity RARITY = CardRarity.BASIC; // 卡牌稀有度（基础、普通、罕见、稀有、特殊等）
+    private static final CardRarity RARITY = CardRarity.SPECIAL; // 卡牌稀有度（基础、普通、罕见、稀有、特殊等）
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY; // 卡牌目标（敌人、所有敌人、自身、无目标等）
 
     public StrikeAll() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.damage = this.baseDamage = 4; // 基础伤害值
-        this.tags.add(CardTags.STARTER_STRIKE); // 标记为初始卡组中的打击牌
         this.tags.add(CardTags.STRIKE); // 标记为打击牌（用于其他卡牌效果联动）
     }
 

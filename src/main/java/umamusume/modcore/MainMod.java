@@ -12,11 +12,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
-import umamusume.cards.Defend;
-import umamusume.cards.FoodBurgerMeat;
-import umamusume.cards.PrepareTraining;
-import umamusume.cards.Strike;
-import umamusume.cards.StrikeAll;
+import umamusume.cards.*;
 import umamusume.characters.Oguri;
 import umamusume.powers.umaPower;
 import umamusume.relics.OguriRelicFood;
@@ -58,11 +54,13 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
 
     //编辑卡牌的代码
     public void receiveEditCards() {
-        BaseMod.addCard(new Strike());
-        BaseMod.addCard(new Defend());
         BaseMod.addCard(new StrikeAll());
         BaseMod.addCard(new FoodBurgerMeat());
         BaseMod.addCard(new PrepareTraining());
+        BaseMod.addCard(new GreenJuice());
+        BaseMod.addCard(new G1());
+        BaseMod.addCard(new Strike());
+        BaseMod.addCard(new Defend());
     }
     //本地化
     public void receiveEditStrings() {
