@@ -12,11 +12,11 @@ import umamusume.powers.umaPower;
 )
 public class MonsterDeathPatch {
     @SpirePostfixPatch
-    public static void onMonsterDie(AbstractMonster __instance) {
+    public static void onMonsterDie() {
         // 遍历玩家所有Power，调用onDeath
         for (AbstractPower power : AbstractDungeon.player.powers) {
             if (power instanceof umaPower) {
-                ((umaPower)power).onDeath(__instance);
+                ((umaPower)power).onDeath();
             }
         }
     }

@@ -35,8 +35,7 @@ public class umaPower extends AbstractPower {
         this.description = DESCRIPTIONS[0];
     }
 
-    public void onDeath(AbstractMonster monster) {
-        // System.out.println("敌人被斩杀了!123");
+    public void onDeath() {
         ArrayList<AbstractCard> foodCards = new ArrayList<>();
         Random t = new Random();
         // 生成食物牌
@@ -47,11 +46,9 @@ public class umaPower extends AbstractPower {
         }
         AbstractCard foodCard = foodCards.get(t.nextInt(foodCards.size())).makeStatEquivalentCopy();
         this.addToBot(new MakeTempCardInHandAction(foodCard, 1));
-
     }
 
     public void atEndOfTurn(boolean isPlayer) {
-        // System.out.println("-1!!!!!!!");
         this.amount--;
         if (this.amount <= 0) {
             // 如果层数为 0，移除该能力
