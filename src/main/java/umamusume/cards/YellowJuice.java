@@ -11,8 +11,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
 import static umamusume.characters.Oguri.PlauerTagsEnum.Uma_Oguri_food;
 
-public class GreenJuice extends CustomCard{
-    public static final String ID = "UmaMod:GreenJuice"; //卡牌ID
+public class YellowJuice extends CustomCard{
+    public static final String ID = "UmaMod:YellowJuice"; //卡牌ID
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "umaResources/img/cards/strike.png";
@@ -23,7 +23,7 @@ public class GreenJuice extends CustomCard{
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
-    public GreenJuice() {
+    public YellowJuice() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.damage = this.baseDamage = 10;
         this.tags.add(Uma_Oguri_food); // 添加“食物”标签

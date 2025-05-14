@@ -38,14 +38,7 @@ public class FoodBurgerMeat extends CustomCard{
         this.addToBot(new HealAction(p, p, this.magicNumber));
 
 //        AbstractMonster target = m;
-        addToBot((AbstractGameAction)new DamageCallbackAction((AbstractCreature) m, new DamageInfo((AbstractCreature)p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL, hp -> {
-            if ((m.isDying || m.currentHealth <= 0) && !m.halfDead && !m.hasPower("Minion")){
-                flash(); //Flash!
-                if (AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-                    UmaFoodReward.addUmaFoodReward();
-                }
-            }
-        }));
+
     }
 
     public void upgrade(){

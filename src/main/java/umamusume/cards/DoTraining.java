@@ -7,8 +7,8 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import basemod.abstracts.CustomCard;
 import umamusume.powers.umaPower;
-public class PrepareTraining extends CustomCard{
-    public static final String ID = "UmaMod:PrepareTraining";
+public class DoTraining extends CustomCard{
+    public static final String ID = "UmaMod:DoTraining";
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "umaResources/img/cards/strike.png";
@@ -19,7 +19,7 @@ public class PrepareTraining extends CustomCard{
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
 
-    public PrepareTraining() {
+    public DoTraining() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = this.magicNumber = 1;
     }

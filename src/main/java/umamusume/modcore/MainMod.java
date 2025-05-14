@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
-import com.megacrit.cardcrawl.localization.UIStrings;
 import umamusume.cards.Defend;
 import umamusume.cards.FoodBurgerMeat;
 import umamusume.cards.PrepareTraining;
@@ -22,7 +21,6 @@ import umamusume.cards.*;
 import umamusume.characters.Oguri;
 import umamusume.powers.umaPower;
 import umamusume.relics.OguriRelicFood;
-import umamusume.reward.UmaFoodReward;
 
 import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
 import static umamusume.characters.Oguri.PlayerColorEnum.UMA_OGURI;
@@ -68,6 +66,14 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
         BaseMod.addCard(new G1());
         BaseMod.addCard(new Strike());
         BaseMod.addCard(new Defend());
+        BaseMod.addCard(new AAA());
+        BaseMod.addCard(new BBB());
+        BaseMod.addCard(new CCC());
+        BaseMod.addCard(new DoTraining());
+        BaseMod.addCard(new NoTraining());
+        BaseMod.addCard(new YellowJuice());
+        BaseMod.addCard(new BlueJuice());
+        BaseMod.addCard(new G2());
     }
     //本地化
     public void receiveEditStrings() {
@@ -92,10 +98,12 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
         );
 
     }
-
+/*
     public void receivePostInitialize() {
         UmaFoodReward.register();
     }
+
+ */
 
     public void receiveEditRelics() {
         BaseMod.addRelic(new OguriRelicFood(), RelicType.SHARED); // RelicType表示是所有角色都能拿到的遗物，还是一个角色的独有遗物

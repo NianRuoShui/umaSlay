@@ -1,3 +1,4 @@
+/*
 package umamusume.reward;
 
 import basemod.BaseMod;
@@ -77,7 +78,7 @@ public class UmaFoodReward extends CustomReward {
 
 
     public static AbstractCard UmaFoodCardRolling(){
-       List<AbstractCard> card_list = AbstractDungeon.srcCommonCardPool.group;
+       List<AbstractCard> card_list = AbstractDungeon.srcRareCardPool.group;
        int b = AbstractDungeon.cardRandomRng.random(card_list.size() - 1);
        return ((AbstractCard)card_list.get(b).makeCopy());
     }
@@ -85,3 +86,4 @@ public class UmaFoodReward extends CustomReward {
 
 
 }
+*/

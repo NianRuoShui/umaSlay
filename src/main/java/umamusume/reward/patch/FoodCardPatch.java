@@ -1,3 +1,4 @@
+/*
 package umamusume.reward.patch;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
@@ -9,3 +10,5 @@ public class FoodCardPatch {
         public static RewardItem.RewardType UMA_FOOD_CARD;
     }
 }
+
+ */
