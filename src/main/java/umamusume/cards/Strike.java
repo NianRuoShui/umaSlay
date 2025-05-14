@@ -40,20 +40,6 @@ public class Strike extends CustomCard {
     }
 // p 玩家  m 怪物
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (Settings.isDebug) { //调试
-            if (Settings.isInfo) {
-                this.multiDamage = new int[AbstractDungeon.getCurrRoom().monsters.monsters.size()];
-
-                for (int i = 0; i < AbstractDungeon.getCurrRoom().monsters.monsters.size(); ++i) {
-                    this.multiDamage[i] = 150;
-                }
-                this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-            } else {
-                this.addToBot(new DamageAction(m, new DamageInfo(p, 150, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-            }
-        }
-        else { //基础伤害
-            this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        }
+        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
     }
 }
