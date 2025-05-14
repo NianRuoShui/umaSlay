@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -36,24 +35,23 @@ public class umaPower extends AbstractPower {
         this.description = DESCRIPTIONS[0];
     }
 
-
     public void onDeath(AbstractMonster monster) {
+        // System.out.println("敌人被斩杀了!123");
         ArrayList<AbstractCard> foodCards = new ArrayList<>();
         Random t = new Random();
-        if (monster.currentHealth <= 0 && !monster.halfDead && !monster.isDying){
-            System.out.println("敌人被斩杀了！");
-            // 生成食物牌
-            for (AbstractCard card : CardLibrary.getAllCards()) {
-                if (card.tags.contains(Uma_Oguri_food)) {
-                    foodCards.add(card);
-                }
+        // 生成食物牌
+        for (AbstractCard card : CardLibrary.getAllCards()) {
+            if (card.tags.contains(Uma_Oguri_food)) {
+                foodCards.add(card);
             }
-            AbstractCard foodCard = foodCards.get(t.nextInt(foodCards.size())).makeStatEquivalentCopy();
-            this.addToBot(new MakeTempCardInHandAction(foodCard, 1));
         }
+        AbstractCard foodCard = foodCards.get(t.nextInt(foodCards.size())).makeStatEquivalentCopy();
+        this.addToBot(new MakeTempCardInHandAction(foodCard, 1));
+
     }
 
     public void atEndOfTurn(boolean isPlayer) {
+        // System.out.println("-1!!!!!!!");
         this.amount--;
         if (this.amount <= 0) {
             // 如果层数为 0，移除该能力
