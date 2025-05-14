@@ -4,12 +4,13 @@ import basemod.abstracts.CustomRelic;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Random;
 
 import static umamusume.characters.Oguri.PlauerTagsEnum.Uma_Oguri_food;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
@@ -29,18 +30,28 @@ public class OguriRelicFood extends CustomRelic {
     public AbstractRelic makeCopy() {
         return new OguriRelicFood();
     }
+
+
     public void atBattleStart() {
         super.atBattleStart();
         ArrayList<AbstractCard> foodCards = new ArrayList<>();
-        for (AbstractCard card : AbstractDungeon.player.masterDeck.group) {
+
+        for (AbstractCard card : CardLibrary.getAllCards()) {
             if (card.tags.contains(Uma_Oguri_food)) {
                 foodCards.add(card);
             }
         }
+        // for (AbstractCard card : AbstractDungeon.player.masterDeck.group) {
+        //     if (card.tags.contains(Uma_Oguri_food)) {
+        //         foodCards.add(card);
+        //     }
+        // }
         Collections.shuffle(foodCards, AbstractDungeon.cardRandomRng.random);
         int cardsToAdd = Math.min(3, foodCards.size());
-        for (int i = 0; i < cardsToAdd; i++) {
-            AbstractCard foodCard = foodCards.get(i).makeStatEquivalentCopy();
+        Random t = new Random();
+        
+        for (int i = 0; i < 3; i++) {
+            AbstractCard foodCard = foodCards.get(t.nextInt(cardsToAdd)).makeStatEquivalentCopy();
             this.addToBot(new MakeTempCardInHandAction(foodCard, 1)); // 将卡牌加入手牌
         }
     }

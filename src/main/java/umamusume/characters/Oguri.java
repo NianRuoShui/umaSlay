@@ -69,9 +69,6 @@ public class Oguri extends CustomPlayer {
         }
         retVal.add("UmaMod:StrikeAll");
         retVal.add("UmaMod:StrikeAll");
-        retVal.add("UmaMod:FoodBurgerMeat");
-        retVal.add("UmaMod:FoodBurgerMeat");
-        retVal.add("UmaMod:FoodBurgerMeat");
         return retVal;
     }
 
