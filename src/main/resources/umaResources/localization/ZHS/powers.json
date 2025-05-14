@@ -1,9 +1,8 @@
 {
-  "UmaMod:testPower": {
-    "NAME": "示例能力",
+  "UmaMod:PowerPrepareTraining": {
+    "NAME": "预备训练",
     "DESCRIPTIONS": [
-      "当你受到 #y未被格挡 的攻击伤害时，回复 #b",
-      " 点生命。"
+      "斩杀时下回合获得1张食物牌"
     ]
   }
 }

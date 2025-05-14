@@ -21,6 +21,11 @@
     "NAME": "胡萝卜汉堡肉",
     "DESCRIPTION": "恢复 !M! 点生命值",
     "UPGRADE_DESCRIPTION": "固有。 NL 恢复 !M! 点生命值"
+  },
+
+  "UmaMod:PrepareTraining":{
+    "NAME": "预备训练",
+    "DESCRIPTION": "获得预备训练"
   }
 
 }

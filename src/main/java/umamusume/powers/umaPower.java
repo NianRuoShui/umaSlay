@@ -1,14 +1,22 @@
 package umamusume.powers;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import static umamusume.characters.Oguri.PlauerTagsEnum.Uma_Oguri_food;
 
 public class umaPower extends AbstractPower {
-    public static final String POWER_ID = "UmaMod:testPower";
+    public static final String POWER_ID = "UmaMod:PowerPrepareTraining";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     private static final String NAME = powerStrings.NAME;
     private static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -23,9 +31,27 @@ public class umaPower extends AbstractPower {
         String path48 = "umaResources/img/cards/strike.png";
         this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path128), 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
-        this.updateDescription();
+        this.description = DESCRIPTIONS[0];
     }
-    public void updateDescription(){
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+
+
+    public void onMonsterDeath(AbstractMonster monster) {
+        ArrayList<AbstractCard> foodCards = new ArrayList<>();
+        Random t = new Random();
+        // 检查敌人是否被斩杀
+        if (monster.currentHealth <= 0){
+        // if (monster.currentHealth <= 0 && !monster.halfDead && !monster.isDying) {
+            System.out.println("敌人被斩杀了！");
+            // 在下一回合生成食物牌
+            for (AbstractCard card : CardLibrary.getAllCards()) {
+            if (card.tags.contains(Uma_Oguri_food)) {
+                foodCards.add(card);
+                System.out.println(foodCards);
+            }
+            AbstractCard foodCard = foodCards.get(t.nextInt(foodCards.size())).makeStatEquivalentCopy();
+            this.addToBot(new MakeTempCardInDrawPileAction(foodCard, this.amount, true, true));
+
+        }
+        }
     }
 }
