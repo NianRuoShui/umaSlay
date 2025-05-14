@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import umamusume.reward.UmaFoodReward;
 
 import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
 import static umamusume.characters.Oguri.PlauerTagsEnum.Uma_Oguri_food;
