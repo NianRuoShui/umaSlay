@@ -1,10 +1,17 @@
 package umamusume.cards;
 import basemod.abstracts.CustomCard;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.DamageCallbackAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import umamusume.reward.UmaFoodReward;
+
 import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
 import static umamusume.characters.Oguri.PlauerTagsEnum.Uma_Oguri_food;
 
@@ -29,6 +36,16 @@ public class FoodBurgerMeat extends CustomCard{
     public void use(AbstractPlayer p, AbstractMonster m){
         // 使用卡牌时，恢复生命值
         this.addToBot(new HealAction(p, p, this.magicNumber));
+
+//        AbstractMonster target = m;
+        addToBot((AbstractGameAction)new DamageCallbackAction((AbstractCreature) m, new DamageInfo((AbstractCreature)p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL, hp -> {
+            if ((m.isDying || m.currentHealth <= 0) && !m.halfDead && !m.hasPower("Minion")){
+                flash(); //Flash!
+                if (AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+                    UmaFoodReward.addUmaFoodReward();
+                }
+            }
+        }));
     }
 
     public void upgrade(){
