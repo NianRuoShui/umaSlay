@@ -12,7 +12,7 @@ import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
 import static umamusume.characters.Oguri.PlauerTagsEnum.Uma_Oguri_food;
 
 public class BlueJuice extends CustomCard{
-    public static final String ID = "UmaMod:GreenJuice"; //卡牌ID
+    public static final String ID = "UmaMod:BlueJuice"; //卡牌ID
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "umaResources/img/cards/strike.png";

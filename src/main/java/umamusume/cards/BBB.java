@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import basemod.abstracts.CustomCard;
 import umamusume.powers.umaPower;
 public class BBB extends CustomCard{
-    public static final String ID = "UmaMod:PrepareTraining";
+    public static final String ID = "UmaMod:BBB";
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "umaResources/img/cards/strike.png";

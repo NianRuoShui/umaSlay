@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 public class OguriRelicFood extends CustomRelic {
+    private boolean waitingForCardReward = false;
     public static final String ID = "UmaMod:OguriFood";
     private static final String IMG_PATH = "umaResources/img/relics/OguriFood.png";
     private static final RelicTier RELIC_TIER = RelicTier.STARTER;
@@ -35,7 +36,6 @@ public class OguriRelicFood extends CustomRelic {
     public void atBattleStart() {
         super.atBattleStart();
         ArrayList<AbstractCard> foodCards = new ArrayList<>();
-
         for (AbstractCard card : CardLibrary.getAllCards()) {
             if (card.tags.contains(Uma_Oguri_food)) {
                 foodCards.add(card);
@@ -50,9 +50,40 @@ public class OguriRelicFood extends CustomRelic {
         int cardsToAdd = Math.min(3, foodCards.size());
         Random t = new Random();
         
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 1; i++) {
             AbstractCard foodCard = foodCards.get(t.nextInt(cardsToAdd)).makeStatEquivalentCopy();
             this.addToBot(new MakeTempCardInHandAction(foodCard, 1)); // 将卡牌加入手牌
+        }
+    }
+    public void onVictory() {
+        super.onVictory();
+        // 获取所有food卡牌
+        ArrayList<AbstractCard> foodCards = new ArrayList<>();
+        for (AbstractCard card : CardLibrary.getAllCards()) {
+            if (card.tags.contains(Uma_Oguri_food)) {
+                foodCards.add(card);
+            }
+        }
+        // 随机打乱卡牌顺序
+        Collections.shuffle(foodCards, AbstractDungeon.cardRandomRng.random);
+        // 取前三张卡牌作为奖励选项
+        int cardsToShow = Math.min(3, foodCards.size());
+        ArrayList<AbstractCard> rewardCards = new ArrayList<>(foodCards.subList(0, cardsToShow));
+        // 显示奖励选择界面
+        // AbstractDungeon.cardRewardScreen.chooseOneOpen(rewardCards);
+        AbstractDungeon.cardRewardScreen.customCombatOpen(rewardCards, "选择一张食物卡加入卡组", true);
+        waitingForCardReward = true;
+    }
+    @Override
+    public void update() {
+        super.update();
+        if (waitingForCardReward && AbstractDungeon.cardRewardScreen.discoveryCard != null) {
+            AbstractCard chosen = AbstractDungeon.cardRewardScreen.discoveryCard;
+            if (chosen != null) {
+                AbstractDungeon.player.masterDeck.addToTop(chosen.makeStatEquivalentCopy());
+                AbstractDungeon.cardRewardScreen.discoveryCard = null;
+                waitingForCardReward = false;
+            }
         }
     }
 }
