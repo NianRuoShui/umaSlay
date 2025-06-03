@@ -31,11 +31,8 @@ public class Oguri extends CustomPlayer {
     private static final String COPRSE_IMAGE = "umaResources/img/char/shoulder1.png";
     // 战斗界面左下角能量图标的每个图层
     private static final String[] ORB_TEXTURES = new String[]{
-            "umaResources/img/char/shoulder1.png",
-            "umaResources/img/char/shoulder1.png",
-            "umaResources/img/char/shoulder1.png",
-            "umaResources/img/char/shoulder1.png",
-            "umaResources/img/char/shoulder1.png",
+            "umaResources/img/UI/carrot.png",
+
 
     };
     // 每个图层的旋转速度
@@ -44,7 +41,7 @@ public class Oguri extends CustomPlayer {
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString("UmaMod:Oguri");
 
     public Oguri (String name) {
-        super(name, PlayerColorEnum.UMA_OGURI, ORB_TEXTURES, "umaResources/img/char/shoulder1.png", LAYER_SPEED, null, null);
+        super(name, PlayerColorEnum.UMA_OGURI, ORB_TEXTURES, "umaResources/img/char/shoulder1.png", null, null, null);
         // 人物对话气泡的大小
         this.dialogX = (this.drawX + 0.0F * Settings.scale);
         this.dialogY = (this.drawY + 150.0F * Settings.scale);

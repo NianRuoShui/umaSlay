@@ -27,28 +27,28 @@ public class umaPower extends AbstractPower {
         this.owner = owner;
         this.type =PowerType.BUFF;
         this.amount = Amount;
-        String path128 = "umaResources/img/cards/strike.png";
-        String path48 = "umaResources/img/cards/strike.png";
+        String path128 = "umaResources/img/UI/utx_ico_obtain_02.png";
+        String path48 = "umaResources/img/UI/utx_ico_obtain_02.png";
         this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path128), 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
         this.description = DESCRIPTIONS[0];
     }
 
-    public void onDeath() {
-        ArrayList<AbstractCard> foodCards = new ArrayList<>();
-        Random t = new Random();
-        // 生成食物牌
-        for (AbstractCard card : CardLibrary.getAllCards()) {
-            if (card.tags.contains(Uma_Oguri_food)) {
-                foodCards.add(card);
-            }
-        }
-        AbstractCard foodCard = foodCards.get(t.nextInt(foodCards.size())).makeStatEquivalentCopy();
-        this.addToBot(new MakeTempCardInHandAction(foodCard, 1));
-    }
+    // 死亡时触发
+    // public void onDeath() {
+    //     ArrayList<AbstractCard> foodCards = new ArrayList<>();
+    //     Random t = new Random();
+    //     // 生成食物牌
+    //     for (AbstractCard card : CardLibrary.getAllCards()) {
+    //         if (card.tags.contains(Uma_Oguri_food)) {
+    //             foodCards.add(card);
+    //         }
+    //     }
+    //     AbstractCard foodCard = foodCards.get(t.nextInt(foodCards.size())).makeStatEquivalentCopy();
+    //     this.addToBot(new MakeTempCardInHandAction(foodCard, 1));
+    // }
 
         public void atEndOfTurn(boolean isPlayer) {
-        this.amount--;
         if (this.amount <= 0) {
             // 如果层数为 0，移除该能力
             this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));

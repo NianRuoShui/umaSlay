@@ -63,17 +63,8 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
         BaseMod.addCard(new FoodBurgerMeat());
         BaseMod.addCard(new PrepareTraining());
         BaseMod.addCard(new GreenJuice());
-        BaseMod.addCard(new G1());
         BaseMod.addCard(new Strike());
         BaseMod.addCard(new Defend());
-        BaseMod.addCard(new AAA());
-        BaseMod.addCard(new BBB());
-        BaseMod.addCard(new CCC());
-        BaseMod.addCard(new DoTraining());
-        BaseMod.addCard(new NoTraining());
-        BaseMod.addCard(new YellowJuice());
-        BaseMod.addCard(new BlueJuice());
-        BaseMod.addCard(new G2());
     }
     //本地化
     public void receiveEditStrings() {

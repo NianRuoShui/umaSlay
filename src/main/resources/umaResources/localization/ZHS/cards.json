@@ -25,11 +25,7 @@
 
   "UmaMod:PrepareTraining":{
     "NAME": "预备训练",
-    "DESCRIPTION": "获得预备训练"
-  },
-  "UmaMod:G1":{
-    "NAME": "G1套餐",
-    "DESCRIPTION": "占位符"
+    "DESCRIPTION": "获得训练层数"
   },
   "UmaMod:GreenJuice":{
     "NAME": "青汁",
