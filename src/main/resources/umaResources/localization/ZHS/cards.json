@@ -30,5 +30,9 @@
   "UmaMod:GreenJuice":{
     "NAME": "青汁",
     "DESCRIPTION": "占位符"
+  },
+  "UmaMod:EnergyDrink":{
+    "NAME": "能量饮料",
+    "DESCRIPTION": "恢复 !M! 点生命值， 获得 !E! 点能量"
   }
 }
