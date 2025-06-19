@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.localization.RelicStrings;
 import umamusume.cards.*;
 import umamusume.characters.Oguri;
 import umamusume.powers.umaPower;
+import umamusume.powers.*;
 import umamusume.relics.OguriRelicFood;
 
 import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
@@ -62,6 +63,8 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
         BaseMod.addCard(new Strike());
         BaseMod.addCard(new Defend());
         BaseMod.addCard(new EnergyDrink());
+        BaseMod.addCard(new BigEater());
+        BaseMod.addCard(new FinalSprint());
     }
     //本地化
     public void receiveEditStrings() {
@@ -98,6 +101,7 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
     }
     public void receiveEditPowers() {
         BaseMod.addPower(umaPower.class, umaPower.POWER_ID);
+        BaseMod.addPower(BigEaterPower.class, BigEaterPower.POWER_ID);
     }
 }
 

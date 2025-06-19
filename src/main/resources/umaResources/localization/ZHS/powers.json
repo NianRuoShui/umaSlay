@@ -2,7 +2,19 @@
   "UmaMod:PowerPrepareTraining": {
     "NAME": "预备训练",
     "DESCRIPTIONS": [
-      "斩杀时下回合获得1张食物牌"
+      "斩杀时下回合获得1张食物牌。"
+    ]
+  },
+  "UmaMod:BigEaterPower":{
+    "NAME": "大胃王",
+    "DESCRIPTIONS": [
+      "每当你使用食物牌时,获得1层力量和敏捷。"
+    ]
+  },
+  "UmaMod:FinalSprintPower":{
+    "NAME": "最后冲刺",
+    "DESCRIPTIONS": [
+      "本回合伤害翻倍,下回合开始时获得3层虚弱"
     ]
   }
 }

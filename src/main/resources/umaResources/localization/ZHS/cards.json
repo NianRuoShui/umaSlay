@@ -33,6 +33,14 @@
   },
   "UmaMod:EnergyDrink":{
     "NAME": "能量饮料",
-    "DESCRIPTION": "恢复 !M! 点生命值， 获得 !E! 点能量"
+    "DESCRIPTION": "恢复 6 点生命值， 获得 1 点能量"
+  },
+  "UmaMod:BigEater":{
+    "NAME": "大胃王",
+    "DESCRIPTION": "获得大胃王"
+  },
+  "UmaMod:FinalSprint":{
+    "NAME": "最后冲刺",
+    "DESCRIPTION": "本回合伤害翻倍，下回合开始时获得3层虚弱"
   }
 }
