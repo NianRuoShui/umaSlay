@@ -31,7 +31,6 @@ public class PrepareTraining extends CustomCard{
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // 赋予“预备训练”能力
         this.addToBot(new ApplyPowerAction(p, p, new umaPower(p, this.magicNumber), this.magicNumber));
     }
 

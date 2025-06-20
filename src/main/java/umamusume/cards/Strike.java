@@ -1,10 +1,13 @@
 package umamusume.cards;
 import basemod.abstracts.CustomCard;
+import umamusume.modcore.TrainPoint;
+
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -35,6 +38,12 @@ public class Strike extends CustomCard {
             this.upgradeName(); //升级名称 加“+”
             this.upgradeDamage(3); //加伤害
         }
+    }
+
+    @Override
+    public void applyPowers() {
+        this.baseDamage = TrainPoint.modifyByTrainPoint(this, this.damage); // 训练点加成
+        super.applyPowers();
     }
 // p 玩家  m 怪物
     public void use(AbstractPlayer p, AbstractMonster m) {

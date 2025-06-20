@@ -1,8 +1,8 @@
 {
-  "UmaMod:PowerPrepareTraining": {
-    "NAME": "预备训练",
+  "UmaMod:umaPower": {
+    "NAME": "训练点数",
     "DESCRIPTIONS": [
-      "斩杀时下回合获得1张食物牌。"
+      "点数越高，卡牌效果越强。"
     ]
   },
   "UmaMod:BigEaterPower":{

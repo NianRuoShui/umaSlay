@@ -52,7 +52,7 @@ public class OguriRelicFood extends CustomRelic {
         Collections.shuffle(foodCards, AbstractDungeon.cardRandomRng.random);
         int cardsToAdd = Math.min(3, foodCards.size());
         Random t = new Random();
-        // 随机选取一张食物卡，加入手牌
+        // 随机选取一张食物卡，加入手牌 for循环避免想加多个卡牌重写
         for (int i = 0; i < count; i++) {
             AbstractCard foodCard = foodCards.get(t.nextInt(cardsToAdd)).makeStatEquivalentCopy();
             this.addToBot(new MakeTempCardInHandAction(foodCard, 1)); // 将卡牌加入手牌

@@ -102,6 +102,7 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
     public void receiveEditPowers() {
         BaseMod.addPower(umaPower.class, umaPower.POWER_ID);
         BaseMod.addPower(BigEaterPower.class, BigEaterPower.POWER_ID);
+        BaseMod.addPower(FinalSprintPower.class, FinalSprintPower.POWER_ID);
     }
 }
 

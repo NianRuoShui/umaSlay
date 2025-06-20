@@ -5,5 +5,13 @@
     "DESCRIPTIONS": [
       "每场战斗开始时获得1张食物卡。"
     ]
+  },
+
+  "UmaMod:OguriTicket": {
+    "NAME": "自助餐券",
+    "FLAVOR": "还没有把小栗拉黑的自助餐店的一人用餐券",
+    "DESCRIPTIONS": [
+      "每回合获得1点训练点数"
+    ]
   }
 }

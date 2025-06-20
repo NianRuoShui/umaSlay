@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
+import umamusume.modcore.TrainPoint;
 
 //全体攻击
 public class StrikeAll extends CustomCard {
@@ -47,5 +48,9 @@ public class StrikeAll extends CustomCard {
                     AbstractGameAction.AttackEffect.BLUNT_LIGHT)); //效果
         }
     }
-    
+    @Override
+    public void applyPowers() {
+        this.baseDamage = TrainPoint.modifyByTrainPoint(this, this.damage); // 训练点加成
+        super.applyPowers();
+    }
 }

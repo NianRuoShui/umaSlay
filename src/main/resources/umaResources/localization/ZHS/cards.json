@@ -41,6 +41,6 @@
   },
   "UmaMod:FinalSprint":{
     "NAME": "最后冲刺",
-    "DESCRIPTION": "本回合伤害翻倍，下回合开始时获得3层虚弱"
+    "DESCRIPTION": "本回合伤害翻倍,下回合开始时获得3层虚弱"
   }
 }
