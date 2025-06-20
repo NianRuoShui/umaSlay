@@ -1,6 +1,8 @@
 package umamusume.powers;
 
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -14,6 +16,7 @@ public class umaPower extends AbstractPower {
     private static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     public umaPower(AbstractCreature owner, int Amount){
+        System.out.println("Amount:"+Amount);
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
@@ -26,11 +29,29 @@ public class umaPower extends AbstractPower {
         this.description = DESCRIPTIONS[0];
         this.updateDescription();
     }
-
+    @Override
+    public void stackPower(int stackAmount) {
+        System.out.println("stackPower called, stackAmount=" + stackAmount);
+        this.fontScale = 8.0F;
+        this.amount += stackAmount;
+        
+        if (this.amount >= 999) {
+           this.amount = 999;
+        }
+    
+        if (this.amount <= -999) {
+           this.amount = -999;
+        }
+        // this.updateDescription();
+    }
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        this.description = DESCRIPTIONS[0];
     }
+    @Override
+    public float atDamageGive(float damage, DamageInfo.DamageType type) {
+      return damage + (float)this.amount;
+   }
     // 死亡时触发
     // public void onDeath() {
     //     ArrayList<AbstractCard> foodCards = new ArrayList<>();

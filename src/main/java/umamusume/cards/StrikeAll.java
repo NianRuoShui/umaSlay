@@ -48,9 +48,4 @@ public class StrikeAll extends CustomCard {
                     AbstractGameAction.AttackEffect.BLUNT_LIGHT)); //效果
         }
     }
-    @Override
-    public void applyPowers() {
-        this.baseDamage = TrainPoint.modifyByTrainPoint(this, this.damage); // 训练点加成
-        super.applyPowers();
-    }
 }

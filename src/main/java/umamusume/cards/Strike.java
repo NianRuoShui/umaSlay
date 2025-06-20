@@ -39,16 +39,8 @@ public class Strike extends CustomCard {
         }
     }
 
-    @Override
-    public void applyPowers() {
-        // super.applyPowers();
-        this.damage = TrainPoint.modifyByTrainPoint(this, this.baseDamage); // 训练点加成
-        super.applyPowers();
-        System.out.println("Strike applyPowers: " + this.baseDamage);
-    }
 // p 玩家  m 怪物
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // this.damage = TrainPoint.modifyByTrainPoint(this, this.baseDamage); // 训练点加成
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
     }
 }

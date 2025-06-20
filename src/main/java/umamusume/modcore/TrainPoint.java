@@ -9,7 +9,7 @@ public class TrainPoint {
         if (AbstractDungeon.player.hasPower(POWER_ID)) {
             training = AbstractDungeon.player.getPower(POWER_ID).amount;
         }
-        int result = baseValue + training;
-        return Math.max(result, 0);
+        System.out.println("训练点数:"+training);
+        return training;
     }
 }

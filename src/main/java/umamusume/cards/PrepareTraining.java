@@ -18,19 +18,22 @@ public class PrepareTraining extends CustomCard{
     private static final CardColor COLOR = Uma_Oguri_Orange;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
-
     public PrepareTraining() {
+
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.baseMagicNumber = this.magicNumber = 1;
+        this.baseMagicNumber = 1;
+        this.magicNumber = this.baseMagicNumber;
     }
 
     public void upgrade() { //When card upgrade
         if (!this.upgraded) {
             this.upgradeName();
+            this.upgradeMagicNumber(1);
         }
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        System.out.println("magicNumber:"+this.magicNumber);
         this.addToBot(new ApplyPowerAction(p, p, new umaPower(p, this.magicNumber), this.magicNumber));
     }
 

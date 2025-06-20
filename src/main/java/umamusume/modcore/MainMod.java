@@ -65,6 +65,7 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
         BaseMod.addCard(new EnergyDrink());
         BaseMod.addCard(new BigEater());
         BaseMod.addCard(new FinalSprint());
+        
     }
     //本地化
     public void receiveEditStrings() {

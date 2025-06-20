@@ -58,16 +58,15 @@ public class Oguri extends CustomPlayer {
     // 初始卡组的ID，可直接写或引用变量
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
-        // retVal.add("UmaMod:StrikeAll");
+        
+        retVal.add("UmaMod:StrikeAll");
         // retVal.add("UmaMod:EnergyDrink");
         // retVal.add("UmaMod:BigEater");
-        // retVal.add("UmaMod:EnergyDrink");
-        // retVal.add("UmaMod:BigEater");
-        retVal.add("UmaMod:GreenJuice");
-        retVal.add("UmaMod:GreenJuice");
 
+        retVal.add("UmaMod:GreenJuice");
         retVal.add("UmaMod:FinalSprint");
-        retVal.add("UmaMod:FinalSprint");
+        retVal.add("UmaMod:PrepareTraining");
+        retVal.add("UmaMod:PrepareTraining");
 
         for(int x = 0; x < 5 ; x++) {
             retVal.add("UmaMod:Strike");
