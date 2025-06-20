@@ -29,7 +29,7 @@
   },
   "UmaMod:GreenJuice":{
     "NAME": "青汁",
-    "DESCRIPTION": "占位符"
+    "DESCRIPTION": "移除所有负面效果,获得 1 层混乱"
   },
   "UmaMod:EnergyDrink":{
     "NAME": "能量饮料",

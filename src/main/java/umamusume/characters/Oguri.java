@@ -63,6 +63,9 @@ public class Oguri extends CustomPlayer {
         // retVal.add("UmaMod:BigEater");
         // retVal.add("UmaMod:EnergyDrink");
         // retVal.add("UmaMod:BigEater");
+        retVal.add("UmaMod:GreenJuice");
+        retVal.add("UmaMod:GreenJuice");
+
         retVal.add("UmaMod:FinalSprint");
         retVal.add("UmaMod:FinalSprint");
 
