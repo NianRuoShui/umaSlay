@@ -1,6 +1,6 @@
 package umamusume.cards;
 import basemod.abstracts.CustomCard;
-import umamusume.modcore.TrainPoint;
+
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;

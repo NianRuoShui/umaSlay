@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
-import umamusume.modcore.TrainPoint;
+
 
 //全体攻击
 public class StrikeAll extends CustomCard {
