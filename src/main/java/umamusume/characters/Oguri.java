@@ -32,11 +32,9 @@ public class Oguri extends CustomPlayer {
     // 战斗界面左下角能量图标的每个图层
     private static final String[] ORB_TEXTURES = new String[]{
             "umaResources/img/UI/carrot.png",
-
-
     };
     // 每个图层的旋转速度
-    private static final float[] LAYER_SPEED = new float[]{-40.0F, -32.0F, 20.0F, -20.0F, 0.0F, -10.0F, -8.0F, 5.0F, -5.0F, 0.0F};
+    // private static final float[] LAYER_SPEED = new float[]{-40.0F, -32.0F, 20.0F, -20.0F, 0.0F, -10.0F, -8.0F, 5.0F, -5.0F, 0.0F};
     // 人物的本地化文本
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString("UmaMod:Oguri");
 
@@ -86,8 +84,8 @@ public class Oguri extends CustomPlayer {
         return new CharSelectInfo(
                 characterStrings.NAMES[0], //人物名
                 characterStrings.TEXT[0], //人物介绍
-                75, // 当前血量
-                75, // 最大血量
+                78, // 当前血量
+                78, // 最大血量
                 0,// 初始充能球栏位
                 99,// 初始携带金币
                 5,// 每回合抽牌数量

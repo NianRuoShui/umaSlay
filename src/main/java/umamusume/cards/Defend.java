@@ -3,7 +3,6 @@ import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
@@ -34,12 +33,7 @@ public class Defend extends CustomCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (Settings.isDebug) { //50防
-            this.addToBot(new GainBlockAction(p, p, 50));
-        }
-        else {
-            this.addToBot(new GainBlockAction(p, p, this.block));
-        }
+        this.addToBot(new GainBlockAction(p, p, this.block));
     }
 
 }

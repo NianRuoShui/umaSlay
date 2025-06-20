@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -42,11 +41,14 @@ public class Strike extends CustomCard {
 
     @Override
     public void applyPowers() {
-        this.baseDamage = TrainPoint.modifyByTrainPoint(this, this.damage); // 训练点加成
+        // super.applyPowers();
+        this.damage = TrainPoint.modifyByTrainPoint(this, this.baseDamage); // 训练点加成
         super.applyPowers();
+        System.out.println("Strike applyPowers: " + this.baseDamage);
     }
 // p 玩家  m 怪物
     public void use(AbstractPlayer p, AbstractMonster m) {
+        // this.damage = TrainPoint.modifyByTrainPoint(this, this.baseDamage); // 训练点加成
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
     }
 }

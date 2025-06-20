@@ -15,10 +15,11 @@ public class FinalSprintPower extends AbstractPower{
     private static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     
 
-    public FinalSprintPower(AbstractCreature owner) {
+    public FinalSprintPower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
+        this.amount = amount;
         this.type = PowerType.BUFF;
 
         String path128 = "umaResources/img/UI/utx_ico_obtain_02.png";
@@ -31,7 +32,7 @@ public class FinalSprintPower extends AbstractPower{
     @Override
     public void atStartOfTurn() {
         this.flash();
-        this.addToBot(new ApplyPowerAction(owner, owner, new WeakPower(owner, 3, false), 1));
+        this.addToBot(new ApplyPowerAction(owner, owner, new WeakPower(owner, this.amount, false), this.amount));
         this.addToTop(new com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction(owner, owner, this.ID));
     }
 

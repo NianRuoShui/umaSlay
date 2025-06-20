@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DoubleDamagePower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 
 import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
 
@@ -33,7 +32,7 @@ public class FinalSprint extends CustomCard{
         // 本回合双倍伤害
         this.addToBot(new ApplyPowerAction(p, p, new DoubleDamagePower(p, 1, false), 1));
         // 下回合虚弱
-        this.addToBot(new ApplyPowerAction(p, p, new FinalSprintPower(p), 1));
+        this.addToBot(new ApplyPowerAction(p, p, new FinalSprintPower(p, 3), 1));
     }
 
     @Override

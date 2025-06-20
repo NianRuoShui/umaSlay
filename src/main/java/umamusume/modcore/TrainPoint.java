@@ -10,6 +10,6 @@ public class TrainPoint {
             training = AbstractDungeon.player.getPower(POWER_ID).amount;
         }
         int result = baseValue + training;
-        return result;
+        return Math.max(result, 0);
     }
 }

@@ -29,6 +29,7 @@ public class EnergyDrink extends CustomCard{
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.tags.add(Uma_Oguri_food);
         this.baseMagicNumber = this.magicNumber = ENERGY;
+        
     }
 
     @Override

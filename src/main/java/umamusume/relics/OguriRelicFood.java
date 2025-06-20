@@ -34,6 +34,7 @@ public class OguriRelicFood extends CustomRelic {
 
     // 战斗开始时触发
     public void atBattleStart() {
+        System.out.println("遗物触发了！");
         int count = 1;
         super.atBattleStart();
         ArrayList<AbstractCard> foodCards = new ArrayList<>();
@@ -43,6 +44,7 @@ public class OguriRelicFood extends CustomRelic {
                 foodCards.add(card);
             }
         }
+        System.out.println("食物卡数量: " + foodCards.size());
         // for (AbstractCard card : AbstractDungeon.player.masterDeck.group) {
         //     if (card.tags.contains(Uma_Oguri_food)) {
         //         foodCards.add(card);
