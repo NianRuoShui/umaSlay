@@ -19,13 +19,13 @@ public class umaPower extends AbstractPower {
     private static final String NAME = powerStrings.NAME;
     private static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public static final List<String> TACTIC_ID = Arrays.asList(
-            "UmaMod:LeaderPower",
-            "UmaMod:FrontRunnerPower", // 先
-            "UmaMod:StalkerPower",     // 差
-            "UmaMod:ChaserPower"       // 追
-    );
-
+//    public static final List<String> TACTIC_ID = Arrays.asList(
+//            "UmaMod:LeaderPower",
+//            "UmaMod:FrontRunnerPower", // 先
+//            "UmaMod:StalkerPower",     // 差
+//            "UmaMod:ChaserPower"       // 追
+//    );
+    public static final int DOMAIN_THRESHOLD = 50;
 
     public umaPower(AbstractCreature owner, int amount){
         this.name = NAME;
@@ -39,7 +39,7 @@ public class umaPower extends AbstractPower {
         this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
         this.description = DESCRIPTIONS[0];
         this.updateDescription();
-        this.updateTactic();
+//        this.updateTactic();
     }
     @Override
     public void stackPower(int stackAmount) {
@@ -53,7 +53,8 @@ public class umaPower extends AbstractPower {
         if (this.amount <= -999) {
            this.amount = -999;
         }
-        this.updateTactic();
+        checkDomainTrigger();
+//        this.updateTactic();
         this.updateDescription();
     }
     @Override
@@ -64,23 +65,30 @@ public class umaPower extends AbstractPower {
 //    public float atDamageGive(float damage, DamageInfo.DamageType type) {
 //        return damage + (float)this.amount;
 //    }
-
-    public void updateTactic(){
-        for (String tacticId:TACTIC_ID){
-            if(this.owner.hasPower(tacticId)){
-                this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, tacticId));
-            }
-        }
-        if (this.amount >= 10){
-            this.addToTop(new ApplyPowerAction(this.owner, this.owner, new LeaderPower(this.owner)));
-        }else if (this.amount >= 0){
-            this.addToTop(new ApplyPowerAction(this.owner, this.owner, new FrontRunnerPower(this.owner)));
-        }else  if (this.amount >= -10){
-            this.addToTop(new ApplyPowerAction(this.owner, this.owner, new ChaserPower(this.owner)));
-        }else {
-            this.addToTop(new ApplyPowerAction(this.owner, this.owner, new StalkerPower(this.owner)));
+    private void checkDomainTrigger() {
+        if (this.amount >= DOMAIN_THRESHOLD && !this.owner.hasPower("UmaMod:ZonePower")) {
+            this.flash();
+            this.addToBot(new ApplyPowerAction(this.owner, this.owner, new ZonePower(this.owner)));
+            this.amount = 0;
         }
     }
+
+//    public void updateTactic(){
+//        for (String tacticId:TACTIC_ID){
+//            if(this.owner.hasPower(tacticId)){
+//                this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, tacticId));
+//            }
+//        }
+//        if (this.amount >= 10){
+//            this.addToTop(new ApplyPowerAction(this.owner, this.owner, new LeaderPower(this.owner)));
+//        }else if (this.amount >= 0){
+//            this.addToTop(new ApplyPowerAction(this.owner, this.owner, new FrontRunnerPower(this.owner)));
+//        }else  if (this.amount >= -10){
+//            this.addToTop(new ApplyPowerAction(this.owner, this.owner, new ChaserPower(this.owner)));
+//        }else {
+//            this.addToTop(new ApplyPowerAction(this.owner, this.owner, new StalkerPower(this.owner)));
+//        }
+//    }
 
     // 死亡时触发
     // public void onDeath() {

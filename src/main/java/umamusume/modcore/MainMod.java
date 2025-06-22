@@ -1,6 +1,5 @@
 package umamusume.modcore;
 import basemod.BaseMod;
-import basemod.devcommands.relic.Relic;
 import basemod.helpers.RelicType;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditCharactersSubscriber;
@@ -70,8 +69,10 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
         BaseMod.addCard(new BigEater());
         BaseMod.addCard(new FinalSprint());
         BaseMod.addCard(new Versatile());
-        BaseMod.addCard(new Versatile.GainTrainingChoiceCard(0));
-        BaseMod.addCard(new Versatile.LoseTrainingChoiceCard(0));
+        BaseMod.addCard(new Versatile.ChooseLeaderPowerCard());
+        BaseMod.addCard(new Versatile.ChooseFrontRunnerPowerCard());
+        BaseMod.addCard(new Versatile.ChooseChaserPowerCard());
+        BaseMod.addCard(new Versatile.ChooseStalkerPowerCard());
         BaseMod.addCard(new VictoryLeap());
         BaseMod.addCard(new SnackTime());
         BaseMod.addCard(new FinalStretch());

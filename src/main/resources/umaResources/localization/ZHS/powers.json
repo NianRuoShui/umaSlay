@@ -1,8 +1,8 @@
 {
   "UmaMod:umaPower": {
-    "NAME": "跑法倾向",
+    "NAME": "训练点数",
     "DESCRIPTIONS": [
-      "点数大于等于10时，跑法为逃 NL 点数大于等于0时，跑法为先 NL 点数小于等于-10时，跑法为追 NL 点数小于0时，跑法为差"
+      "达到20点时进入领域。 NL 获得 #b%2$d 点 #y力量 NL 每当你打出一张攻击牌时，抽 #b%3$d 张牌 "
     ]
   },
   "UmaMod:BigEaterPower":{
@@ -39,6 +39,12 @@
     "NAME": "跑法:追",
     "DESCRIPTIONS":[
       "后差，本回合未打出攻击牌则下回合额外抽一张牌，获得 1 点能量[E]。"
+    ]
+  },
+  "UmaMod:ZonePower": {
+    "NAME": "胜利的执念",
+    "DESCRIPTIONS": [
+      "领域。"
     ]
   }
 }
