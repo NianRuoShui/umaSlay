@@ -76,6 +76,7 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
         BaseMod.addCard(new VictoryLeap());
         BaseMod.addCard(new SnackTime());
         BaseMod.addCard(new FinalStretch());
+        BaseMod.addCard(new InitialGuidance());
 
     }
     //本地化

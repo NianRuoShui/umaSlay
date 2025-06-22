@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import basemod.abstracts.CustomPlayer;
+import umamusume.cards.InitialGuidance;
 import umamusume.cards.Strike;
 import umamusume.modcore.ResourceManager;
 import umamusume.relics.OguriRelicFood;
@@ -60,6 +61,7 @@ public class Oguri extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
         retVal.add("UmaMod:StrikeAll");
         retVal.add("UmaMod:PrepareTraining");
+        retVal.add("UmaMod:InitialGuidance");
         for(int x = 0; x < 5 ; x++) {
             retVal.add("UmaMod:Strike");
             retVal.add("UmaMod:Defend");
@@ -102,7 +104,7 @@ public class Oguri extends CustomPlayer {
 
     // 翻牌事件出现的你的职业牌
     public AbstractCard getStartCardForEvent() {
-        return new Strike();
+        return new umamusume.cards.Strike();
     }
 
     // 卡牌轨迹颜色

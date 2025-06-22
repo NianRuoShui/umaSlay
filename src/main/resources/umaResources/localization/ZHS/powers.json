@@ -2,7 +2,7 @@
   "UmaMod:umaPower": {
     "NAME": "训练点数",
     "DESCRIPTIONS": [
-      "达到20点时进入领域。 NL 获得 #b%2$d 点 #y力量 NL 每当你打出一张攻击牌时，抽 #b%3$d 张牌 "
+      "达到20点时进入领域。 NL 获得 2 点 力量 NL 每当你打出一张攻击牌时，抽 3 张牌 "
     ]
   },
   "UmaMod:BigEaterPower":{
@@ -38,7 +38,7 @@
   "UmaMod:ChaserPower": {
     "NAME": "跑法:追",
     "DESCRIPTIONS":[
-      "后差，本回合未打出攻击牌则下回合额外抽一张牌，获得 1 点能量[E]。"
+      "后追，本回合未打出攻击牌则下回合额外抽一张牌，获得 1 点能量[E]。"
     ]
   },
   "UmaMod:ZonePower": {

@@ -71,6 +71,10 @@
     "NAME": "最终直线",
     "DESCRIPTION": "获得 !B! 点格挡。 NL 若你处于 领跑 或 差行 状态，抽 !M! 张牌。 NL 若你处于 先行 或 追击 状态，获得 [E] [E] 。",
     "UPGRADE_DESCRIPTION": "获得 !B! 点格挡。 NL 若你处于 领跑 或 差行 状态，抽 !M! 张牌。 NL 若你处于 先行 或 追击 状态，获得 [E] [E] 。"
+  },
+  "UmaMod:InitialGuidance": {
+    "NAME": "初始指导",
+    "DESCRIPTION": "消耗。 NL 回合结束时消耗。 NL 只能在你 没有 任何 跑法 时使用。 NL 选择一种 跑法 。"
   }
 
 }
