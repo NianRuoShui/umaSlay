@@ -25,8 +25,10 @@ public class GreenJuice extends CustomCard{
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
 
+
     public GreenJuice() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        this.baseMagicNumber = 1;
         this.tags.add(Uma_Oguri_food); // 添加“食物”标签
     }
 

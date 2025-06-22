@@ -2,7 +2,6 @@ package umamusume.powers;
 
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -10,7 +9,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 public class LeaderPower extends AbstractPower {
     public static final String POWER_ID = "UmaMod:LeaderPower";
@@ -36,8 +34,8 @@ public class LeaderPower extends AbstractPower {
     @Override
     public void atStartOfTurn() {
         this.flash();
-        // 易伤，体现领跑风险
-        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new VulnerablePower(this.owner, 1, false), 1));
+        // 易伤
+//        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new VulnerablePower(this.owner, 1, false), 1));
         // 所有敌人造成5点伤害
         // THORNS表纯效果伤害 不受力量加持
         this.addToBot(new DamageAllEnemiesAction(this.owner, DamageInfo.createDamageMatrix(5, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));

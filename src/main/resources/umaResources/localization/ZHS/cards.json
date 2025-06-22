@@ -25,11 +25,12 @@
 
   "UmaMod:PrepareTraining":{
     "NAME": "预备训练",
-    "DESCRIPTION": "获得1训练层数"
+    "DESCRIPTION": "获得 !M! 训练层数"
   },
   "UmaMod:GreenJuice":{
     "NAME": "青汁",
-    "DESCRIPTION": "移除所有负面效果,获得 1 层混乱"
+    "DESCRIPTION": "移除所有负面效果,获得 !M! 层混乱",
+    "UPGRADE_DESCRIPTION": "移除所有负面效果"
   },
   "UmaMod:EnergyDrink":{
     "NAME": "能量饮料",
@@ -37,10 +38,39 @@
   },
   "UmaMod:BigEater":{
     "NAME": "大胃王",
-    "DESCRIPTION": "获得大胃王"
+    "DESCRIPTION": "获得 大胃王"
   },
   "UmaMod:FinalSprint":{
     "NAME": "最后冲刺",
-    "DESCRIPTION": "本回合伤害翻倍,下回合开始时获得3层虚弱"
+    "DESCRIPTION": "本回合伤害翻倍,下回合开始时获得 !M! 层虚弱"
+  },
+  "UmaMod:Versatile": {
+    "NAME": "变幻自在",
+    "DESCRIPTION": "消耗。 NL 选择：获得 !M! 点 #y训练值 或 失去 !M! 点 #y训练值 。",
+    "UPGRADE_DESCRIPTION": "消耗。 NL 选择：获得 !M! 点 #y训练值 或 失去 !M! 点 #y训练值 。"
+  },
+  "UmaMod:GainTrainingChoice": {
+    "NAME": "向前冲刺",
+    "DESCRIPTION": "获得 !M! 点 #y训练值 。"
+  },
+  "UmaMod:LoseTrainingChoice": {
+    "NAME": "调整节奏",
+    "DESCRIPTION": "失去 !M! 点 #y训练值 。"
+  },
+  "UmaMod:VictoryLeap": {
+    "NAME": "胜利的跃动",
+    "DESCRIPTION": "消耗。 NL 造成 !D! 点伤害。 NL 如果你拥有 #y先行 ，此牌的费用变为 1 且造成双倍伤害。",
+    "UPGRADE_DESCRIPTION": "消耗。 NL 造成 !D! 点伤害。 NL 如果你拥有 #y先行 ，此牌的费用变为 1 且造成双倍伤害。"
+  },
+  "UmaMod:SnackTime": {
+    "NAME": "点心时间",
+    "DESCRIPTION": "获得 !B! 点格挡。 NL 将一张随机的 #y食物 牌洗入你的抽牌堆。 NL 消耗。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点格挡。 NL 将一张随机的 #y食物 牌洗入你的抽牌堆。 NL 消耗。"
+  },
+  "UmaMod:FinalStretch": {
+    "NAME": "最终直线",
+    "DESCRIPTION": "获得 !B! 点格挡。 NL 若你处于 #y领跑 或 #y差行 状态，抽 !M! 张牌。 NL 若你处于 #y先行 或 #y追击 状态，获得 [E] [E] 。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点格挡。 NL 若你处于 #y领跑 或 #y差行 状态，抽 !M! 张牌。 NL 若你处于 #y先行 或 #y追击 状态，获得 [E] [E] 。"
   }
+
 }

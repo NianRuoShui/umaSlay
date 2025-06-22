@@ -1,5 +1,6 @@
 package umamusume.modcore;
 import basemod.BaseMod;
+import basemod.devcommands.relic.Relic;
 import basemod.helpers.RelicType;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditCharactersSubscriber;
@@ -17,7 +18,7 @@ import umamusume.cards.*;
 import umamusume.characters.Oguri;
 import umamusume.powers.umaPower;
 import umamusume.powers.*;
-import umamusume.relics.OguriRelicFood;
+import umamusume.relics.*;
 
 import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
 import static umamusume.characters.Oguri.PlayerColorEnum.UMA_OGURI;
@@ -68,7 +69,13 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
         BaseMod.addCard(new EnergyDrink());
         BaseMod.addCard(new BigEater());
         BaseMod.addCard(new FinalSprint());
-        
+        BaseMod.addCard(new Versatile());
+        BaseMod.addCard(new Versatile.GainTrainingChoiceCard(0));
+        BaseMod.addCard(new Versatile.LoseTrainingChoiceCard(0));
+        BaseMod.addCard(new VictoryLeap());
+        BaseMod.addCard(new SnackTime());
+        BaseMod.addCard(new FinalStretch());
+
     }
     //本地化
     public void receiveEditStrings() {
@@ -102,6 +109,12 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
 
     public void receiveEditRelics() {
         BaseMod.addRelic(new OguriRelicFood(), RelicType.SHARED); // RelicType表示是所有角色都能拿到的遗物，还是一个角色的独有遗物
+        BaseMod.addRelic(new DiamondHeadwear(), RelicType.SHARED);
+        BaseMod.addRelic(new TrainerStopwatch(), RelicType.SHARED);
+        BaseMod.addRelic(new LargeGastricBag(), RelicType.SHARED);
+        BaseMod.addRelic(new OguriTicket(), RelicType.SHARED);
+
+
     }
 }
 

@@ -1,9 +1,13 @@
 package umamusume.powers;
 
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -34,6 +38,20 @@ public class ChaserPower extends AbstractPower {
     public void atStartOfTurn() {
         this.flash();
     }
+    //未打出攻击牌则抽1牌，+1能量
+    @Override
+    public void atEndOfTurn(boolean isPlayer) {
+        if (isPlayer) {
+            // 检查本回合打出的牌中，是否没有任何一张是攻击牌
+            if (AbstractDungeon.actionManager.cardsPlayedThisTurn.stream()
+                    .noneMatch(card -> card.type == AbstractCard.CardType.ATTACK)) {
+                this.flash();
+                this.addToBot(new DrawCardAction(1));
+                this.addToBot(new GainEnergyAction(1));
+            }
+        }
+    }
+
 
 //    @Override
 //    public float atDamageGive(float damage, DamageInfo.DamageType type) {

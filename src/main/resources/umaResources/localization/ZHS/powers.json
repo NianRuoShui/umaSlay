@@ -2,7 +2,7 @@
   "UmaMod:umaPower": {
     "NAME": "跑法倾向",
     "DESCRIPTIONS": [
-      "随着点数变化而改变跑法。"
+      "点数大于等于10时，跑法为逃 NL 点数大于等于0时，跑法为先 NL 点数小于等于-10时，跑法为追 NL 点数小于0时，跑法为差"
     ]
   },
   "UmaMod:BigEaterPower":{
@@ -20,7 +20,25 @@
   "UmaMod:LeaderPower": {
     "NAME": "跑法:逃",
     "DESCRIPTIONS":[
-      "领跑,回合开始时获得易伤，对所有敌人造成5点伤害。"
+      "领跑,回合开始时对所有敌人造成5点伤害。"
+    ]
+  },
+  "UmaMod:FrontRunnerPower": {
+    "NAME": "跑法:先",
+    "DESCRIPTIONS":[
+      "先行,回合开始获得1层敏捷。"
+    ]
+  },
+  "UmaMod:StalkerPower": {
+    "NAME": "跑法:差",
+    "DESCRIPTIONS":[
+      "居中,回合开始随机一名敌人获得1层易伤。"
+    ]
+  },
+  "UmaMod:ChaserPower": {
+    "NAME": "跑法:追",
+    "DESCRIPTIONS":[
+      "后差，本回合未打出攻击牌则下回合额外抽一张牌，获得 1 点能量[E]。"
     ]
   }
 }

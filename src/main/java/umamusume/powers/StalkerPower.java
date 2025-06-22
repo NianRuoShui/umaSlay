@@ -1,15 +1,19 @@
 package umamusume.powers;
 
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 public class StalkerPower extends AbstractPower {
-    public static final String POWER_ID = "UmaMod:FrontRunnerPower";
+    public static final String POWER_ID = "UmaMod:StalkerPower";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     private static final String NAME = powerStrings.NAME;
     private static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -32,7 +36,14 @@ public class StalkerPower extends AbstractPower {
 
     @Override
     public void atStartOfTurn() {
-        this.flash();
+        // 随机敌人易伤
+        AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
+
+        if (randomMonster != null) {
+            this.flash();
+            this.addToBot(new ApplyPowerAction(randomMonster,this.owner,new VulnerablePower(randomMonster, 1, false), 1)
+            );
+        }
     }
 
     @Override

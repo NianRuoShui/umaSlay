@@ -20,7 +20,7 @@ public class umaPower extends AbstractPower {
     private static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     public static final List<String> TACTIC_ID = Arrays.asList(
-            LeaderPower.POWER_ID,
+            "UmaMod:LeaderPower",
             "UmaMod:FrontRunnerPower", // 先
             "UmaMod:StalkerPower",     // 差
             "UmaMod:ChaserPower"       // 追
@@ -71,11 +71,11 @@ public class umaPower extends AbstractPower {
                 this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, tacticId));
             }
         }
-        if (this.amount >= 5){
+        if (this.amount >= 10){
             this.addToTop(new ApplyPowerAction(this.owner, this.owner, new LeaderPower(this.owner)));
         }else if (this.amount >= 0){
             this.addToTop(new ApplyPowerAction(this.owner, this.owner, new FrontRunnerPower(this.owner)));
-        }else  if (this.amount >= -5){
+        }else  if (this.amount >= -10){
             this.addToTop(new ApplyPowerAction(this.owner, this.owner, new ChaserPower(this.owner)));
         }else {
             this.addToTop(new ApplyPowerAction(this.owner, this.owner, new StalkerPower(this.owner)));
