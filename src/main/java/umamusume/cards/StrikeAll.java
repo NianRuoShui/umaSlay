@@ -2,6 +2,7 @@ package umamusume.cards;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;   
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -9,7 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
-
+import com.megacrit.cardcrawl.cards.AbstractCard;
 
 //全体攻击
 public class StrikeAll extends CustomCard {
@@ -26,26 +27,37 @@ public class StrikeAll extends CustomCard {
 
     public StrikeAll() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.damage = this.baseDamage = 4; // 基础伤害值
+        this.baseDamage = 4; // 基础伤害值
         this.tags.add(CardTags.STRIKE); // 标记为打击牌（用于其他卡牌效果联动）
+        this.isMultiDamage = true;
     }
 
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName(); //升级名称 加“+”
             this.upgradeDamage(3); //加伤害
+            this.initializeDescription();
         }
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        this.addToBot(new DamageAllEnemiesAction(
+                p, this.multiDamage, this.damageTypeForTurn,AbstractGameAction.AttackEffect.BLUNT_LIGHT  )
+        );
+
+
         // 遍历当前房间中的所有敌人
-        for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            // 对每个敌人造成伤害
-            this.addToBot(
-                new DamageAction(
-                    monster, //敌人
-                    new DamageInfo(p, this.damage, this.damageTypeForTurn), //伤害信息 
-                    AbstractGameAction.AttackEffect.BLUNT_LIGHT)); //效果
-        }
+//        for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
+//            // 对每个敌人造成伤害
+//            this.addToBot(
+//                new DamageAction(
+//                    monster, //敌人
+//                    new DamageInfo(p, this.damage, this.damageTypeForTurn), //伤害信息
+//                    AbstractGameAction.AttackEffect.BLUNT_LIGHT)); //效果
+//        }
+    }
+    @Override
+    public  AbstractCard makeCopy() {
+        return new StrikeAll();
     }
 }

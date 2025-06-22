@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
-import static umamusume.characters.Oguri.PlauerTagsEnum.Uma_Oguri_food;
+import static umamusume.characters.Oguri.PlayerTagsEnum.Uma_Oguri_food;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;

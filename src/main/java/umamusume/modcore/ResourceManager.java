@@ -25,13 +25,7 @@ public class ResourceManager {
     // 在卡牌预览界面的能量图标
     public static final String BIG_ORB = "umaResources/img/UI/cost_carrot.png";
     // 小尺寸的能量图标（战斗中，牌堆预览）
-    public static final String ENEYGY_ORB = "umaResources/img/UI/cost_carrot.png";
-    // 颜色
-
-    //
-    // public static final Color UMA_COLOR = new Color(129.0F / 255.0F, 232.0F / 255.0F, 9.0F / 225.0F, 1.0F);
-    // Actually these two method has same function
-    // 
+    public static final String ENERGY_ORB = "umaResources/img/UI/cost_carrot.png";
+    // 四周颜色
     public static final Color UMA_COLOR = CardHelper.getColor(251.0F, 205.0F, 85.0F);
-    //
 }

@@ -1,8 +1,8 @@
 {
   "UmaMod:umaPower": {
-    "NAME": "训练点数",
+    "NAME": "跑法倾向",
     "DESCRIPTIONS": [
-      "点数越高，卡牌效果越强。"
+      "随着点数变化而改变跑法。"
     ]
   },
   "UmaMod:BigEaterPower":{
@@ -15,6 +15,12 @@
     "NAME": "最后冲刺",
     "DESCRIPTIONS": [
       "本回合伤害翻倍,下回合开始时获得3层虚弱"
+    ]
+  },
+  "UmaMod:LeaderPower": {
+    "NAME": "跑法:逃",
+    "DESCRIPTIONS":[
+      "领跑,回合开始时获得易伤，对所有敌人造成5点伤害。"
     ]
   }
 }

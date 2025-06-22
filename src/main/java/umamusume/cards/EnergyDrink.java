@@ -3,11 +3,12 @@ import basemod.abstracts.CustomCard;
 
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
-import static umamusume.characters.Oguri.PlauerTagsEnum.Uma_Oguri_food;
+import static umamusume.characters.Oguri.PlayerTagsEnum.Uma_Oguri_food;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class EnergyDrink extends CustomCard{
@@ -28,18 +29,23 @@ public class EnergyDrink extends CustomCard{
     public EnergyDrink() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.tags.add(Uma_Oguri_food);
+        this.exhaust = true; //消耗
+        this.baseBlock = HEAL;
         this.baseMagicNumber = this.magicNumber = ENERGY;
-        
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         // 回复6点生命
-        this.addToBot(new HealAction(p, p, HEAL));
+        this.addToBot(new HealAction(p, p, this.block));
         // 获得1点能量
         this.addToBot(new GainEnergyAction(this.magicNumber));
     }
 
+    @Override
+    public AbstractCard makeCopy() {
+        return new EnergyDrink();
+    }
     @Override
     public void upgrade() {
         if (!this.upgraded) {

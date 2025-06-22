@@ -25,7 +25,7 @@
 
   "UmaMod:PrepareTraining":{
     "NAME": "预备训练",
-    "DESCRIPTION": "获得训练层数"
+    "DESCRIPTION": "获得1训练层数"
   },
   "UmaMod:GreenJuice":{
     "NAME": "青汁",
@@ -33,7 +33,7 @@
   },
   "UmaMod:EnergyDrink":{
     "NAME": "能量饮料",
-    "DESCRIPTION": "恢复 6 点生命值， 获得 1 点能量"
+    "DESCRIPTION": "消耗，恢复 !B! 点生命值， 获得 !M! 点能量"
   },
   "UmaMod:BigEater":{
     "NAME": "大胃王",

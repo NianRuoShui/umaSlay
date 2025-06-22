@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 public class Defend extends CustomCard {
 
     public static final String ID = "UmaMod:Defend";
@@ -19,7 +20,7 @@ public class Defend extends CustomCard {
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.SELF;
 
-    public Defend() {
+    public Defend(){
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.baseBlock = 5;
         this.tags.add(CardTags.STARTER_DEFEND);
@@ -30,6 +31,11 @@ public class Defend extends CustomCard {
             this.upgradeName();
             this.upgradeBlock(3);
         }
+    }
+
+    @Override
+    public AbstractCard makeCopy() {
+        return new Defend();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

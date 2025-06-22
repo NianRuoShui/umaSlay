@@ -39,13 +39,16 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
                 ResourceManager.BG_ATTACK_512,
                 ResourceManager.BG_SKILL_512,
                 ResourceManager.BG_POWER_512,
-                ResourceManager.ENEYGY_ORB,
+                ResourceManager.ENERGY_ORB,
                 ResourceManager.BG_ATTACK_1024,
                 ResourceManager.BG_SKILL_1024,
                 ResourceManager.BG_POWER_1024,
                 ResourceManager.BIG_ORB,
                 ResourceManager.SMALL_ORB
         );
+        BaseMod.addPower(umaPower.class, umaPower.POWER_ID);
+        BaseMod.addPower(BigEaterPower.class, BigEaterPower.POWER_ID);
+        BaseMod.addPower(FinalSprintPower.class, FinalSprintPower.POWER_ID);
 
     }
 
@@ -99,11 +102,6 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
 
     public void receiveEditRelics() {
         BaseMod.addRelic(new OguriRelicFood(), RelicType.SHARED); // RelicType表示是所有角色都能拿到的遗物，还是一个角色的独有遗物
-    }
-    public void receiveEditPowers() {
-        BaseMod.addPower(umaPower.class, umaPower.POWER_ID);
-        BaseMod.addPower(BigEaterPower.class, BigEaterPower.POWER_ID);
-        BaseMod.addPower(FinalSprintPower.class, FinalSprintPower.POWER_ID);
     }
 }
 

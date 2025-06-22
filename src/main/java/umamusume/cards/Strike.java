@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
-
+import com.megacrit.cardcrawl.cards.AbstractCard;
 public class Strike extends CustomCard {
 
     public static final String ID = "UmaMod:Strike"; //卡牌ID
@@ -36,11 +36,17 @@ public class Strike extends CustomCard {
         if(!this.upgraded){
             this.upgradeName(); //升级名称 加“+”
             this.upgradeDamage(3); //加伤害
+            this.initializeDescription();
         }
     }
 
 // p 玩家  m 怪物
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+    }
+
+    @Override
+    public AbstractCard makeCopy() {
+        return new Strike();
     }
 }

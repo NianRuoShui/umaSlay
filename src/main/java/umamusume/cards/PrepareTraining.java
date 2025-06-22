@@ -1,4 +1,5 @@
 package umamusume.cards;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -29,12 +30,17 @@ public class PrepareTraining extends CustomCard{
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(1);
+            this.initializeDescription();
         }
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        System.out.println("magicNumber:"+this.magicNumber);
         this.addToBot(new ApplyPowerAction(p, p, new umaPower(p, this.magicNumber), this.magicNumber));
+    }
+
+    @Override
+    public AbstractCard makeCopy() {
+        return new PrepareTraining();
     }
 
 }

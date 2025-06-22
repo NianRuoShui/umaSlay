@@ -7,7 +7,8 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
-
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+//最终冲刺
 public class FinalSprintPower extends AbstractPower{
     public static final String POWER_ID = "UmaMod:FinalSprintPower";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -33,7 +34,7 @@ public class FinalSprintPower extends AbstractPower{
     public void atStartOfTurn() {
         this.flash();
         this.addToBot(new ApplyPowerAction(owner, owner, new WeakPower(owner, this.amount, false), this.amount));
-        this.addToTop(new com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction(owner, owner, this.ID));
+        this.addToTop(new RemoveSpecificPowerAction(owner, owner, this.ID));
     }
 
     @Override
