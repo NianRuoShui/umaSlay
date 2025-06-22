@@ -67,8 +67,8 @@ public class InitialGuidance extends CustomCard {
         choices.add(new Versatile.ChooseFrontRunnerPowerCard());
         choices.add(new Versatile.ChooseChaserPowerCard());
         choices.add(new Versatile.ChooseStalkerPowerCard());
-
         this.addToBot(new ChooseOneAction(choices));
+
     }
 
     @Override
