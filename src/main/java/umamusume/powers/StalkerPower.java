@@ -46,11 +46,11 @@ public class StalkerPower extends AbstractPower {
         }
     }
 
-    @Override
-    public float atDamageGive(float damage, DamageInfo.DamageType type) {
-//      jia shang
-        return damage + (float)this.amount;
-    }
+    // @Override
+//     public float atDamageGive(float damage, DamageInfo.DamageType type) {
+// //      jia shang
+//         return damage + (float)this.amount;
+//     }
 
     @Override
     public void updateDescription() {

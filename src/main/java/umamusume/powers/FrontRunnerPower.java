@@ -39,11 +39,11 @@ public class FrontRunnerPower extends AbstractPower{
         this.addToBot(new ApplyPowerAction(this.owner, this.owner, new DexterityPower(this.owner, 1), 1));
     }
 
-    @Override
-    public float atDamageGive(float damage, DamageInfo.DamageType type) {
-//      jia shang
-        return damage + (float)this.amount;
-    }
+//     @Override
+//     public float atDamageGive(float damage, DamageInfo.DamageType type) {
+// //      jia shang
+//         return damage + (float)this.amount;
+//     }
 
     @Override
     public void updateDescription() {

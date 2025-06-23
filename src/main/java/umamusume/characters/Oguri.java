@@ -18,8 +18,7 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import basemod.abstracts.CustomPlayer;
-import umamusume.cards.InitialGuidance;
-import umamusume.cards.Strike;
+
 import umamusume.modcore.ResourceManager;
 import umamusume.relics.OguriRelicFood;
 
@@ -205,5 +204,6 @@ public class Oguri extends CustomPlayer {
     public static class PlayerTagsEnum {
         @SpireEnum
         public static AbstractCard.CardTags Uma_Oguri_food;
+        public static AbstractCard.CardTags Uma_Oguri_zone;
     }
 }

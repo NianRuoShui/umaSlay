@@ -1,6 +1,9 @@
 package umamusume.powers;
 
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
+import com.megacrit.cardcrawl.powers.EnergizedPower;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -45,8 +48,8 @@ public class ChaserPower extends AbstractPower {
             if (AbstractDungeon.actionManager.cardsPlayedThisTurn.stream()
                     .noneMatch(card -> card.type == AbstractCard.CardType.ATTACK)) {
                 this.flash();
-                this.addToBot(new DrawCardAction(1));
-                this.addToBot(new GainEnergyAction(1));
+                this.addToBot(new ApplyPowerAction(owner, owner, new DrawCardNextTurnPower(owner, 1), 1));
+                this.addToBot(new ApplyPowerAction(owner, owner, new EnergizedPower(owner, 1), 1));
             }
         }
     }

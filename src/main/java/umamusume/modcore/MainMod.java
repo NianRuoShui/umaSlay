@@ -15,7 +15,6 @@ import com.megacrit.cardcrawl.localization.RelicStrings;
 
 import umamusume.cards.*;
 import umamusume.characters.Oguri;
-import umamusume.powers.umaPower;
 import umamusume.powers.*;
 import umamusume.relics.*;
 
@@ -83,7 +82,8 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
         BaseMod.addCard(new SnackTime());
         BaseMod.addCard(new FinalStretch());
         BaseMod.addCard(new InitialGuidance());
-
+        BaseMod.addCard(new VictoryPremonition());
+        BaseMod.addCard(new VictoryLeap());
     }
     //本地化
     public void receiveEditStrings() {

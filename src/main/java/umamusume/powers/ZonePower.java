@@ -1,17 +1,24 @@
 package umamusume.powers;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import static umamusume.characters.Oguri.PlayerTagsEnum.Uma_Oguri_zone;
 
 public class ZonePower extends AbstractPower {
     public static final String POWER_ID = "UmaMod:ZonePower";
@@ -40,6 +47,27 @@ public class ZonePower extends AbstractPower {
     @Override
     public void onInitialApplication() {
         this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, STRENGTH_GAIN), STRENGTH_GAIN));
+
+        this.addToBot(new com.megacrit.cardcrawl.actions.common.DiscardAction(this.owner, this.owner, com.megacrit.cardcrawl.dungeons.AbstractDungeon.player.hand.size(), false));
+        
+        ArrayList<AbstractCard> zoneCards = new ArrayList<>();
+        
+        for (AbstractCard card : CardLibrary.getAllCards()) {
+            if (card.tags.contains(Uma_Oguri_zone)) {
+                zoneCards.add(card);
+            }
+        }
+        for (AbstractCard c : zoneCards) {
+            this.addToBot(new com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction(
+                c, 1, true, true));
+        }
+        for (int j = 0; j<=5; j++) {
+            Random t = new Random();
+            AbstractCard zoneCard = zoneCards.get(t.nextInt(zoneCards.size())).makeStatEquivalentCopy();
+            this.addToBot(new MakeTempCardInHandAction(zoneCard, 1));
+        }
+
+        
     }
 
     @Override
@@ -66,6 +94,10 @@ public class ZonePower extends AbstractPower {
     public void onRemove() {
         // 领域结束时，移除获得的力量
         this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, -STRENGTH_GAIN), -STRENGTH_GAIN));
+        AbstractPlayer p = (AbstractPlayer) this.owner;
+        p.drawPile.group.removeIf(card -> card.hasTag(Uma_Oguri_zone));
+        p.hand.group.removeIf(card -> card.hasTag(Uma_Oguri_zone));
+        p.discardPile.group.removeIf(card -> card.hasTag(Uma_Oguri_zone));
     }
 
     @Override
