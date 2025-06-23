@@ -20,7 +20,7 @@ public class VictoryPremonition extends CustomCard{
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME; 
     private static final String IMG_PATH = "umaResources/img/cards/strike.png"; 
-    private static final int COST = 3; // 卡牌费用
+    private static final int COST = 1; // 卡牌费用
     private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION; 
     private static final CardType TYPE = CardType.SKILL; 
     private static final CardColor COLOR = Uma_Oguri_Orange; 

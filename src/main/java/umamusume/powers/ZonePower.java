@@ -28,7 +28,7 @@ public class ZonePower extends AbstractPower {
 
     private static final int DURATION = 3; // 领域持续回合数
     private static final int STRENGTH_GAIN = 5;
-    private static final int CARD_DRAW_ON_ATTACK = 1;
+    private static final int CARD_DRAW_ON_ATTACK = 3;
 
     public ZonePower(AbstractCreature owner) {
         this.name = NAME;
@@ -61,7 +61,7 @@ public class ZonePower extends AbstractPower {
             this.addToBot(new com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction(
                 c, 1, true, true));
         }
-        for (int j = 0; j<=5; j++) {
+        for (int j = 0; j<=2; j++) {
             Random t = new Random();
             AbstractCard zoneCard = zoneCards.get(t.nextInt(zoneCards.size())).makeStatEquivalentCopy();
             this.addToBot(new MakeTempCardInHandAction(zoneCard, 1));

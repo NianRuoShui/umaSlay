@@ -38,7 +38,7 @@
   "UmaMod:ChaserPower": {
     "NAME": "跑法:追",
     "DESCRIPTIONS":[
-      "后追，本回合未打出攻击牌则下回合额外抽一张牌，获得 1 点能量[E]。"
+      "后追，本回合未打出攻击牌则下回合额外抽一张牌，获得 1 点能量。"
     ]
   },
   "UmaMod:ZonePower": {
