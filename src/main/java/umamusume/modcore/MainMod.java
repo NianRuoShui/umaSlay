@@ -5,6 +5,7 @@ import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditCharactersSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
+import com.badlogic.gdx.utils.compression.lzma.Base;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -65,6 +66,9 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
         BaseMod.addCard(new GreenJuice());
         BaseMod.addCard(new Strike());
         BaseMod.addCard(new Defend());
+        BaseMod.addCard(new Knock());
+        BaseMod.addCard(new Kick());
+        BaseMod.addCard(new SenakRaid());
     }
     //本地化
     public void receiveEditStrings() {
