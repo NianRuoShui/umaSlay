@@ -1,18 +1,14 @@
 package umamusume.cards;
 import basemod.abstracts.CustomCard;
-import com.evacipated.cardcrawl.mod.stslib.actions.common.DamageCallbackAction;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
-import static umamusume.characters.Oguri.PlauerTagsEnum.Uma_Oguri_food;
+import static umamusume.characters.Oguri.PlayerTagsEnum.Uma_Oguri_food;
 
 public class FoodBurgerMeat extends CustomCard{
     public static final String ID = "UmaMod:FoodBurgerMeat"; //卡牌ID
@@ -28,22 +24,25 @@ public class FoodBurgerMeat extends CustomCard{
 
     public FoodBurgerMeat() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.baseMagicNumber = this.magicNumber = 5; // 恢复生命值
+        this.baseMagicNumber = this.magicNumber = 10; // 恢复生命值
         this.tags.add(Uma_Oguri_food); // 添加“食物”标签
+        this.exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m){
         // 使用卡牌时，恢复生命值
         this.addToBot(new HealAction(p, p, this.magicNumber));
-
-//        AbstractMonster target = m;
-
     }
-
     public void upgrade(){
         if(!this.upgraded){
             this.upgradeName();
             this.upgradeMagicNumber(3); // 升级时增加恢复生命值的数量
+            this.initializeDescription();
         }
+    }
+
+    @Override
+    public AbstractCard makeCopy() {
+        return new FoodBurgerMeat();
     }
 }

@@ -1,9 +1,41 @@
 {
   "UmaMod:OguriFood": {
-    "NAME": "小栗帽的食物",
+    "NAME": "小栗帽的便当",
     "FLAVOR": "从特雷森带来的胡萝卜汉堡肉，似乎还冒着热气",
     "DESCRIPTIONS": [
-      "每场战斗胜利后,抽 #b3 张食物牌并选择一张加入卡组。"
+      "每场战斗开始时获得1张食物卡。"
+    ]
+  },
+
+  "UmaMod:Ticket": {
+    "NAME": "自助餐券",
+    "FLAVOR": "还没有把小栗拉黑的自助餐店的一人用餐券",
+    "DESCRIPTIONS": [
+      "拾起时回复所有生命值，将#b2张能量饮料加入到牌组。"
+    ]
+  },
+
+  "UmaMod:TrainerStopwatch": {
+    "NAME": "训练员的秒表",
+    "FLAVOR": "训练员的制式用品，上面布满了划痕。",
+    "DESCRIPTIONS": [
+      "在每场战斗开始时，获得 #b2 点 #y训练值 。"
+    ]
+  },
+
+  "UmaMod:DiamondHeadwear": {
+    "NAME": "菱形头饰",
+    "FLAVOR": "蓝黄相间的头饰。",
+    "DESCRIPTIONS": [
+      "每当你打出一张 #y食物 牌时，抽 #b1 张牌。"
+    ]
+  },
+
+  "UmaMod:LargeGastricBag": {
+    "NAME": "大胃袋",
+    "FLAVOR": "她的食欲和她的实力一样，深不见底。",
+    "DESCRIPTIONS": [
+      "在你回合开始时，如果你的牌组中拥有 #b25 张或以上的食物牌，获得 [E] 。"
     ]
   }
 }

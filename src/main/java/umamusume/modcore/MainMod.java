@@ -13,15 +13,11 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
-import umamusume.cards.Defend;
-import umamusume.cards.FoodBurgerMeat;
-import umamusume.cards.PrepareTraining;
-import umamusume.cards.Strike;
-import umamusume.cards.StrikeAll;
+
 import umamusume.cards.*;
 import umamusume.characters.Oguri;
-import umamusume.powers.umaPower;
-import umamusume.relics.OguriRelicFood;
+import umamusume.powers.*;
+import umamusume.relics.*;
 
 import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
 import static umamusume.characters.Oguri.PlayerColorEnum.UMA_OGURI;
@@ -43,13 +39,22 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
                 ResourceManager.BG_ATTACK_512,
                 ResourceManager.BG_SKILL_512,
                 ResourceManager.BG_POWER_512,
-                ResourceManager.ENEYGY_ORB,
+                ResourceManager.ENERGY_ORB,
                 ResourceManager.BG_ATTACK_1024,
                 ResourceManager.BG_SKILL_1024,
                 ResourceManager.BG_POWER_1024,
                 ResourceManager.BIG_ORB,
                 ResourceManager.SMALL_ORB
         );
+        BaseMod.addPower(umaPower.class, umaPower.POWER_ID);
+        BaseMod.addPower(BigEaterPower.class, BigEaterPower.POWER_ID);
+        BaseMod.addPower(FinalSprintPower.class, FinalSprintPower.POWER_ID);
+        BaseMod.addPower(ChaserPower.class, ChaserPower.POWER_ID);
+        BaseMod.addPower(LeaderPower.class, LeaderPower.POWER_ID);
+        BaseMod.addPower(FrontRunnerPower.class, FrontRunnerPower.POWER_ID);
+        BaseMod.addPower(StalkerPower.class, StalkerPower.POWER_ID);
+        BaseMod.addPower(TempConfusionPower.class, TempConfusionPower.POWER_ID);
+        BaseMod.addPower(ZonePower.class, ZonePower.POWER_ID);
 
     }
 
@@ -66,6 +71,20 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
         BaseMod.addCard(new GreenJuice());
         BaseMod.addCard(new Strike());
         BaseMod.addCard(new Defend());
+        BaseMod.addCard(new EnergyDrink());
+        BaseMod.addCard(new BigEater());
+        BaseMod.addCard(new FinalSprint());
+        BaseMod.addCard(new Versatile());
+        BaseMod.addCard(new Versatile.ChooseLeaderPowerCard());
+        BaseMod.addCard(new Versatile.ChooseFrontRunnerPowerCard());
+        BaseMod.addCard(new Versatile.ChooseChaserPowerCard());
+        BaseMod.addCard(new Versatile.ChooseStalkerPowerCard());
+        BaseMod.addCard(new VictoryLeap());
+        BaseMod.addCard(new SnackTime());
+        BaseMod.addCard(new FinalStretch());
+        BaseMod.addCard(new InitialGuidance());
+        BaseMod.addCard(new VictoryPremonition());
+        BaseMod.addCard(new VictoryLeap());
         BaseMod.addCard(new Knock());
         BaseMod.addCard(new Kick());
         BaseMod.addCard(new SenakRaid());
@@ -102,9 +121,12 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
 
     public void receiveEditRelics() {
         BaseMod.addRelic(new OguriRelicFood(), RelicType.SHARED); // RelicType表示是所有角色都能拿到的遗物，还是一个角色的独有遗物
-    }
-    public void receiveEditPowers() {
-        BaseMod.addPower(umaPower.class, umaPower.POWER_ID);
+        BaseMod.addRelic(new DiamondHeadwear(), RelicType.SHARED);
+        BaseMod.addRelic(new TrainerStopwatch(), RelicType.SHARED);
+        BaseMod.addRelic(new LargeGastricBag(), RelicType.SHARED);
+        BaseMod.addRelic(new OguriTicket(), RelicType.SHARED);
+
+
     }
 }
 

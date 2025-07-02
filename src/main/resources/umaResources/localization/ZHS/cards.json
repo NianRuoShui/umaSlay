@@ -25,10 +25,75 @@
 
   "UmaMod:PrepareTraining":{
     "NAME": "预备训练",
-    "DESCRIPTION": "获得训练层数"
+    "DESCRIPTION": "获得 !M! 训练层数"
   },
   "UmaMod:GreenJuice":{
     "NAME": "青汁",
-    "DESCRIPTION": "占位符"
+    "DESCRIPTION": "移除所有负面效果,获得 !M! 层混乱",
+    "UPGRADE_DESCRIPTION": "移除所有负面效果"
+  },
+  "UmaMod:EnergyDrink":{
+    "NAME": "能量饮料",
+    "DESCRIPTION": "消耗，恢复 !B! 点生命值， 获得 !M! 点能量"
+  },
+  "UmaMod:BigEater":{
+    "NAME": "大胃王",
+    "DESCRIPTION": "获得 大胃王"
+  },
+  "UmaMod:FinalSprint":{
+    "NAME": "最后冲刺",
+    "DESCRIPTION": "本回合伤害翻倍,下回合开始时获得 !M! 层虚弱"
+  },
+  "UmaMod:Versatile": {
+    "NAME": "变幻自在",
+    "DESCRIPTION": "消耗。 NL 选择：逃 先 差 追 。",
+    "UPGRADE_DESCRIPTION": "消耗。 NL 选择：逃 先 差 追 。"
+  },
+  "UmaMod:GainTrainingChoice": {
+    "NAME": "向前冲刺",
+    "DESCRIPTION": "获得 !M! 点 训练值 。"
+  },
+  "UmaMod:LoseTrainingChoice": {
+    "NAME": "调整节奏",
+    "DESCRIPTION": "失去 !M! 点 训练值 。"
+  },
+  "UmaMod:VictoryLeap": {
+    "NAME": "胜利的跃动",
+    "DESCRIPTION": "消耗。 NL 造成 !D! 点伤害。 NL 如果你拥有 先行 ，此牌的费用变为 1 且造成双倍伤害。",
+    "UPGRADE_DESCRIPTION": "消耗。 NL 造成 !D! 点伤害。 NL 如果你拥有 先行 ，此牌的费用变为 1 且造成双倍伤害。"
+  },
+  "UmaMod:SnackTime": {
+    "NAME": "点心时间",
+    "DESCRIPTION": "获得 !B! 点格挡。 NL 将一张随机的 食物 牌洗入你的抽牌堆。 NL 消耗。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点格挡。 NL 将一张随机的 食物 牌洗入你的抽牌堆。 NL 消耗。"
+  },
+  "UmaMod:FinalStretch": {
+    "NAME": "最终直线",
+    "DESCRIPTION": "获得 !B! 点格挡。 NL 若你处于 领跑 或 差行 状态，抽 !M! 张牌。 NL 若你处于 先行 或 追击 状态，获得 [E] [E] 。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点格挡。 NL 若你处于 领跑 或 差行 状态，抽 !M! 张牌。 NL 若你处于 先行 或 追击 状态，获得 [E] [E] 。"
+  },
+  "UmaMod:InitialGuidance": {
+    "NAME": "初始指导",
+    "DESCRIPTION": "消耗。 NL 虚无。 NL 只能在你 没有 任何 跑法 时使用。 NL 选择一种 跑法 。"
+  },
+  "UmaMod:ChooseLeaderPower": {
+    "NAME": "跑法:逃",
+    "DESCRIPTION":"领跑,回合开始时对所有敌人造成5点伤害。"
+  },
+  "UmaMod:ChooseFrontRunnerPower": {
+    "NAME": "跑法:先",
+    "DESCRIPTION":"先行,回合开始获得1层敏捷。"
+  },
+  "UmaMod:ChooseStalkerPower": {
+    "NAME": "跑法:差",
+    "DESCRIPTION":"居中,回合开始随机一名敌人获得1层易伤。"
+  },
+  "UmaMod:ChooseChaserPower": {
+    "NAME": "跑法:追",
+    "DESCRIPTION":"后追，本回合未打出攻击牌则下回合额外抽一张牌，获得 1 点能量[E]。"
+  },
+  "UmaMod:VictoryPremonition":{
+    "NAME": "胜利的预感",
+    "DESCRIPTION":"领域， NL 获得两点能量[E][E], NL 抽两张牌， NL 获得双倍伤害"
   }
 }

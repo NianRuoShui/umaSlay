@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import basemod.abstracts.CustomPlayer;
-import umamusume.cards.Strike;
+
 import umamusume.modcore.ResourceManager;
 import umamusume.relics.OguriRelicFood;
 
@@ -32,11 +32,9 @@ public class Oguri extends CustomPlayer {
     // 战斗界面左下角能量图标的每个图层
     private static final String[] ORB_TEXTURES = new String[]{
             "umaResources/img/UI/carrot.png",
-
-
     };
     // 每个图层的旋转速度
-    private static final float[] LAYER_SPEED = new float[]{-40.0F, -32.0F, 20.0F, -20.0F, 0.0F, -10.0F, -8.0F, 5.0F, -5.0F, 0.0F};
+    // private static final float[] LAYER_SPEED = new float[]{-40.0F, -32.0F, 20.0F, -20.0F, 0.0F, -10.0F, -8.0F, 5.0F, -5.0F, 0.0F};
     // 人物的本地化文本
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString("UmaMod:Oguri");
 
@@ -61,6 +59,8 @@ public class Oguri extends CustomPlayer {
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
         retVal.add("UmaMod:StrikeAll");
+        retVal.add("UmaMod:PrepareTraining");
+        retVal.add("UmaMod:InitialGuidance");
         for(int x = 0; x < 5 ; x++) {
             retVal.add("UmaMod:Strike");
             retVal.add("UmaMod:Defend");
@@ -79,8 +79,8 @@ public class Oguri extends CustomPlayer {
         return new CharSelectInfo(
                 characterStrings.NAMES[0], //人物名
                 characterStrings.TEXT[0], //人物介绍
-                75, // 当前血量
-                75, // 最大血量
+                78, // 当前血量
+                78, // 最大血量
                 0,// 初始充能球栏位
                 99,// 初始携带金币
                 5,// 每回合抽牌数量
@@ -103,7 +103,7 @@ public class Oguri extends CustomPlayer {
 
     // 翻牌事件出现的你的职业牌
     public AbstractCard getStartCardForEvent() {
-        return new Strike();
+        return new umamusume.cards.Strike();
     }
 
     // 卡牌轨迹颜色
@@ -201,8 +201,9 @@ public class Oguri extends CustomPlayer {
         public static CardLibrary.LibraryType Uma_Oguri_Orange;
     }
 
-    public static class PlauerTagsEnum {
+    public static class PlayerTagsEnum {
         @SpireEnum
         public static AbstractCard.CardTags Uma_Oguri_food;
+        public static AbstractCard.CardTags Uma_Oguri_zone;
     }
 }
