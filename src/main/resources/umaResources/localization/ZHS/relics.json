@@ -37,5 +37,13 @@
     "DESCRIPTIONS": [
       "在你回合开始时，如果你的牌组中拥有 #b25 张或以上的食物牌，获得 [E] 。"
     ]
+  },
+
+  "UmaMod:TrainPoint": {
+     "NAME": "WIP",
+    "FLAVOR": "WIP",
+    "DESCRIPTIONS": [
+      "WIP"
+    ]
   }
 }

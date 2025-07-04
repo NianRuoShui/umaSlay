@@ -1,11 +1,11 @@
 package umamusume.modcore;
+import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.helpers.RelicType;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditCharactersSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
-import com.badlogic.gdx.utils.compression.lzma.Base;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -65,6 +65,11 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
 
     //编辑卡牌的代码
     public void receiveEditCards() {
+        new AutoAdd("umamod")
+                .packageFilter(Strike.class)
+                .setDefaultSeen(true)
+                .cards();
+        /*
         BaseMod.addCard(new StrikeAll());
         BaseMod.addCard(new FoodBurgerMeat());
         BaseMod.addCard(new PrepareTraining());
@@ -88,6 +93,10 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
         BaseMod.addCard(new Knock());
         BaseMod.addCard(new Kick());
         BaseMod.addCard(new SenakRaid());
+        BaseMod.addCard(new ContinuousStrike());
+        BaseMod.addCard(new Sweep());
+
+         */
     }
     //本地化
     public void receiveEditStrings() {
@@ -125,6 +134,7 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
         BaseMod.addRelic(new TrainerStopwatch(), RelicType.SHARED);
         BaseMod.addRelic(new LargeGastricBag(), RelicType.SHARED);
         BaseMod.addRelic(new OguriTicket(), RelicType.SHARED);
+        BaseMod.addRelic(new TrainPoint(), RelicType.SHARED); //我觉得可以改
 
 
     }

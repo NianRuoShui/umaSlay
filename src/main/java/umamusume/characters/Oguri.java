@@ -21,6 +21,7 @@ import basemod.abstracts.CustomPlayer;
 
 import umamusume.modcore.ResourceManager;
 import umamusume.relics.OguriRelicFood;
+import umamusume.relics.TrainPoint;
 
 public class Oguri extends CustomPlayer {
     // 火堆的人物立绘（行动前）
@@ -72,6 +73,7 @@ public class Oguri extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
         retVal.add(OguriRelicFood.ID);//
+        retVal.add(TrainPoint.ID); //搭载TP系统的遗物
         return retVal;
     }
 
@@ -205,5 +207,17 @@ public class Oguri extends CustomPlayer {
         @SpireEnum
         public static AbstractCard.CardTags Uma_Oguri_food;
         public static AbstractCard.CardTags Uma_Oguri_zone;
+        public static AbstractCard.CardTags Uma_TP_plus_two;
+        public static AbstractCard.CardTags Uma_TP_plus_eight;
+        public static AbstractCard.CardTags Uma_TP_plus_one;
+        public static AbstractCard.CardTags Uma_TP_plus_four;
+        public static AbstractCard.CardTags Uma_TP_plus_six;
+        public static AbstractCard.CardTags Uma_TP_minus_two;
+        public static AbstractCard.CardTags Uma_TP_minus_six;
+        public static AbstractCard.CardTags Uma_TP_minus_five;
+        public static AbstractCard.CardTags Uma_TP_minus_ten;
+        public static AbstractCard.CardTags Uma_TP_minus_fifteen;
+        public static AbstractCard.CardTags Uma_TP_minus_twenty;
+
     }
 }
