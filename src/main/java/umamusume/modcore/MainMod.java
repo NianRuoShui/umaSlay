@@ -49,10 +49,10 @@ public class MainMod implements EditCardsSubscriber, EditStringsSubscriber, Edit
         BaseMod.addPower(umaPower.class, umaPower.POWER_ID);
         BaseMod.addPower(BigEaterPower.class, BigEaterPower.POWER_ID);
         BaseMod.addPower(FinalSprintPower.class, FinalSprintPower.POWER_ID);
-        BaseMod.addPower(ChaserPower.class, ChaserPower.POWER_ID);
-        BaseMod.addPower(LeaderPower.class, LeaderPower.POWER_ID);
-        BaseMod.addPower(FrontRunnerPower.class, FrontRunnerPower.POWER_ID);
-        BaseMod.addPower(StalkerPower.class, StalkerPower.POWER_ID);
+        BaseMod.addPower(UmaPaceEndPower.class, UmaPaceEndPower.POWER_ID);
+        BaseMod.addPower(UmaPaceFrontPower.class, UmaPaceFrontPower.POWER_ID);
+        BaseMod.addPower(UmaPacePacePower.class, UmaPacePacePower.POWER_ID);
+        BaseMod.addPower(UmaPaceLatePower.class, UmaPaceLatePower.POWER_ID);
         BaseMod.addPower(TempConfusionPower.class, TempConfusionPower.POWER_ID);
         BaseMod.addPower(ZonePower.class, ZonePower.POWER_ID);
 

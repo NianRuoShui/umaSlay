@@ -10,10 +10,10 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import umamusume.powers.LeaderPower;
-import umamusume.powers.StalkerPower;
-import umamusume.powers.FrontRunnerPower;
-import umamusume.powers.ChaserPower;
+import umamusume.powers.UmaPaceFrontPower;
+import umamusume.powers.UmaPaceLatePower;
+import umamusume.powers.UmaPacePacePower;
+import umamusume.powers.UmaPaceEndPower;
 
 import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
 
@@ -50,11 +50,11 @@ public class FinalStretch extends CustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new GainBlockAction(p, p, this.block));
 
-        if (p.hasPower(LeaderPower.POWER_ID) || p.hasPower(StalkerPower.POWER_ID)) {
+        if (p.hasPower(UmaPaceFrontPower.POWER_ID) || p.hasPower(UmaPaceLatePower.POWER_ID)) {
             this.addToBot(new DrawCardAction(p, this.magicNumber));
         }
 
-        if (p.hasPower(FrontRunnerPower.POWER_ID) || p.hasPower(ChaserPower.POWER_ID)) {
+        if (p.hasPower(UmaPacePacePower.POWER_ID) || p.hasPower(UmaPaceEndPower.POWER_ID)) {
             this.addToBot(new GainEnergyAction(ENERGY_GAIN));
         }
     }

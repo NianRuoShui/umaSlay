@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.NoBlockPower;
 
 import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
-import static umamusume.characters.Oguri.PlayerTagsEnum.Uma_TP_plus_two;
 
 public class SenakRaid extends CustomCard {
     public static final String ID = "UmaMod:SenakRaid";
@@ -30,7 +29,6 @@ public class SenakRaid extends CustomCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.damage = this.baseDamage = 2;
         this.tags.add(CardTags.STRIKE);
-        this.tags.add(Uma_TP_plus_two);
         this.baseMagicNumber = this.magicNumber = 2;
     }
 

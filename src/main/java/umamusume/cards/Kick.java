@@ -2,17 +2,14 @@ package umamusume.cards;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.WeakPower;
 
 import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
-import static umamusume.characters.Oguri.PlayerTagsEnum.Uma_TP_plus_one;
 
 public class Kick extends CustomCard {
     public static final String ID = "UmaMod:Kick";
@@ -30,8 +27,6 @@ public class Kick extends CustomCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.damage = this.baseDamage = 9;
         this.tags.add(CardTags.STRIKE);
-        this.tags.add(Uma_TP_plus_one);
-        this.baseMagicNumber = this.magicNumber = -2;
     }
 
     public void upgrade(){
@@ -45,6 +40,5 @@ public class Kick extends CustomCard {
 
      public void use (AbstractPlayer p , AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        this.addToBot(new ApplyPowerAction(m, p, new WeakPower(p, this.magicNumber, false ), this.magicNumber));
     }
 }

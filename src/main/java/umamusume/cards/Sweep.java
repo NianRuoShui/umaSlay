@@ -11,8 +11,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
-import static umamusume.characters.Oguri.PlayerTagsEnum.Uma_TP_plus_six;
-
 import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
 
 public class Sweep extends CustomCard {
@@ -31,7 +29,6 @@ public class Sweep extends CustomCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.damage = this.baseDamage = 4;
         this.tags.add(CardTags.STRIKE);
-        this.tags.add(Uma_TP_plus_six);
         this.baseMagicNumber = this.magicNumber = 2;
     }
 

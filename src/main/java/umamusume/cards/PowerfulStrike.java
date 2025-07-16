@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.FrailPower;
 
 import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
-import static umamusume.characters.Oguri.PlayerTagsEnum.Uma_TP_plus_eight;
 
 public class PowerfulStrike extends CustomCard {
     public static final String ID = "UmaMod:PowerfulStrike";
@@ -30,7 +29,6 @@ public class PowerfulStrike extends CustomCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.damage = this.baseDamage = 10;
         this.tags.add(CardTags.STRIKE);
-        this.tags.add(Uma_TP_plus_eight);
         this.baseMagicNumber = this.magicNumber = 2;
     }
 

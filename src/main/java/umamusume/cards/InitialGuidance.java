@@ -23,10 +23,10 @@ public class InitialGuidance extends CustomCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final String IMG_PATH = "umaResources/img/cards/strike.png";
     private static final List<String> TACTIC_POWER_IDS = Arrays.asList(
-            LeaderPower.POWER_ID,
-            FrontRunnerPower.POWER_ID,
-            ChaserPower.POWER_ID,
-            StalkerPower.POWER_ID
+            UmaPaceFrontPower.POWER_ID,
+            UmaPacePacePower.POWER_ID,
+            UmaPaceEndPower.POWER_ID,
+            UmaPaceLatePower.POWER_ID
     );
 
     private static final CardRarity RARITY = CardRarity.BASIC;

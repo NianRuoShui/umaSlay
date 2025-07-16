@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 
 import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
-import static umamusume.characters.Oguri.PlayerTagsEnum.Uma_TP_plus_two;
 
 public class ContinuousStrike extends CustomCard {
     public static final String ID = "UmaMod:ContinuousStrike";
@@ -31,7 +30,6 @@ public class ContinuousStrike extends CustomCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.damage = this.baseDamage = 4;
         this.tags.add(CardTags.STRIKE);
-        this.tags.add(Uma_TP_plus_two);
         this.magicNumber = this.baseMagicNumber = 3;
     }
 

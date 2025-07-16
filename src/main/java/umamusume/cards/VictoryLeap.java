@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import umamusume.powers.FrontRunnerPower;
+import umamusume.powers.UmaPacePacePower;
 
 import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
 
@@ -66,7 +66,7 @@ public class VictoryLeap extends CustomCard {
         super.applyPowers();
 
         // 使用辅助方法检查条件
-        if (AbstractDungeon.player.hasPower(FrontRunnerPower.POWER_ID)) {
+        if (AbstractDungeon.player.hasPower(UmaPacePacePower.POWER_ID)) {
             this.damage *= 2;
             this.isDamageModified = true;
             this.setCostForTurn(CONDITIONAL_COST);
@@ -81,7 +81,7 @@ public class VictoryLeap extends CustomCard {
         // 重置基础伤害，然后调用父类方法应用易伤等效果
         this.baseDamage = this.upgraded ? (BASE_DAMAGE + UPGRADE_PLUS_DMG) : BASE_DAMAGE;
         super.calculateCardDamage(mo);
-        if (AbstractDungeon.player.hasPower(FrontRunnerPower.POWER_ID)) {
+        if (AbstractDungeon.player.hasPower(UmaPacePacePower.POWER_ID)) {
             this.damage *= 2;
             this.isDamageModified = true;
         }
@@ -89,7 +89,7 @@ public class VictoryLeap extends CustomCard {
 
     @Override
     public void triggerOnGlowCheck() {
-        if (AbstractDungeon.player.hasPower(FrontRunnerPower.POWER_ID)) {
+        if (AbstractDungeon.player.hasPower(UmaPacePacePower.POWER_ID)) {
             this.glowColor = GOLD_BORDER_GLOW_COLOR.cpy();
         } else {
             this.glowColor = BLUE_BORDER_GLOW_COLOR.cpy();

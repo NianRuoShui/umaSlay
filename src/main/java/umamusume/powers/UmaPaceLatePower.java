@@ -11,14 +11,14 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
-public class StalkerPower extends AbstractPower {
-    public static final String POWER_ID = "UmaMod:StalkerPower";
+public class UmaPaceLatePower extends AbstractPower {
+    public static final String POWER_ID = "UmaMod:UmaPaceLatePower";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     private static final String NAME = powerStrings.NAME;
     private static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     //差
-    public StalkerPower(AbstractCreature owner) {
+    public UmaPaceLatePower(AbstractCreature owner) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;

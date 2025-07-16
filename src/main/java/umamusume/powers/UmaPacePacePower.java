@@ -1,22 +1,22 @@
 package umamusume.powers;
 
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 
-public class LeaderPower extends AbstractPower {
-    public static final String POWER_ID = "UmaMod:LeaderPower";
+public class UmaPacePacePower extends AbstractPower{
+    public static final String POWER_ID = "UmaMod:UmaPacePacePower";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     private static final String NAME = powerStrings.NAME;
     private static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-//逃
-    public LeaderPower(AbstractCreature owner) {
+
+//先
+    public UmaPacePacePower(AbstractCreature owner) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
@@ -33,18 +33,16 @@ public class LeaderPower extends AbstractPower {
 
     @Override
     public void atStartOfTurn() {
+        // 每回合敏捷
         this.flash();
-        // 易伤
-//        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new VulnerablePower(this.owner, 1, false), 1));
-        // 所有敌人造成5点伤害
-        // THORNS表纯效果伤害 不受力量加持
-        this.addToBot(new DamageAllEnemiesAction(this.owner, DamageInfo.createDamageMatrix(5, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
+        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new DexterityPower(this.owner, 1), 1));
     }
 
-//    @Override
-//    public float atDamageGive(float damage, DamageInfo.DamageType type) {
-//        return damage + (float)this.amount;
-//    }
+//     @Override
+//     public float atDamageGive(float damage, DamageInfo.DamageType type) {
+// //      jia shang
+//         return damage + (float)this.amount;
+//     }
 
     @Override
     public void updateDescription() {

@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
-import static umamusume.characters.Oguri.PlayerTagsEnum.Uma_TP_plus_one;
 
 public class Knock extends CustomCard {
     public static final String ID = "UmaMod:Knock";
@@ -28,8 +27,6 @@ public class Knock extends CustomCard {
          super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
          this.damage = this.baseDamage = 9;
          this.tags.add(CardTags.STRIKE);
-         this.tags.add(Uma_TP_plus_one);
-         this.baseMagicNumber = this.magicNumber = 1;
     }
 
     public void upgrade(){

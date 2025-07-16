@@ -62,10 +62,10 @@ public class Versatile extends CustomCard {
 
     private abstract static class AbstractTacticChoiceCard extends CustomCard {
         protected static final List<String> TACTIC_POWER_IDS = Arrays.asList(
-                LeaderPower.POWER_ID,
-                FrontRunnerPower.POWER_ID,
-                ChaserPower.POWER_ID,
-                StalkerPower.POWER_ID
+                UmaPaceFrontPower.POWER_ID,
+                UmaPacePacePower.POWER_ID,
+                UmaPaceEndPower.POWER_ID,
+                UmaPaceLatePower.POWER_ID
         );
 
         public AbstractTacticChoiceCard(String id, String name, String imgPath, String description) {
@@ -96,7 +96,7 @@ public class Versatile extends CustomCard {
                     this.addToBot(new RemoveSpecificPowerAction(p, p, powerId));
                 }
             }
-            this.addToBot(new ApplyPowerAction(p,p,new LeaderPower(AbstractDungeon.player)));
+            this.addToBot(new ApplyPowerAction(p,p,new UmaPaceFrontPower(AbstractDungeon.player)));
         }
 
         @Override
@@ -125,7 +125,7 @@ public class Versatile extends CustomCard {
                     this.addToBot(new RemoveSpecificPowerAction(p, p, powerId));
                 }
             }
-            this.addToBot(new ApplyPowerAction(p,p,new FrontRunnerPower(p)));
+            this.addToBot(new ApplyPowerAction(p,p,new UmaPacePacePower(p)));
         }
 
         @Override
@@ -153,7 +153,7 @@ public class Versatile extends CustomCard {
                     this.addToBot(new RemoveSpecificPowerAction(p, p, powerId));
                 }
             }
-            this.addToBot(new ApplyPowerAction(p,p,new ChaserPower(p)));
+            this.addToBot(new ApplyPowerAction(p,p,new UmaPaceEndPower(p)));
         }
 
         @Override
@@ -183,7 +183,7 @@ public class Versatile extends CustomCard {
                     this.addToBot(new RemoveSpecificPowerAction(p, p, powerId));
                 }
             }
-            this.addToBot(new ApplyPowerAction(p,p,new StalkerPower(p)));
+            this.addToBot(new ApplyPowerAction(p,p,new UmaPaceLatePower(p)));
         }
 
         @Override

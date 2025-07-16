@@ -17,10 +17,10 @@ public class umaPower extends AbstractPower {
     private static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
 //    public static final List<String> TACTIC_ID = Arrays.asList(
-//            "UmaMod:LeaderPower",
-//            "UmaMod:FrontRunnerPower", // 先
-//            "UmaMod:StalkerPower",     // 差
-//            "UmaMod:ChaserPower"       // 追
+//            "UmaMod:UmaPaceFrontPower",
+//            "UmaMod:UmaPacePacePower", // 先
+//            "UmaMod:UmaPaceLatePower",     // 差
+//            "UmaMod:UmaPaceEndPower"       // 追
 //    );
     public static final int DOMAIN_THRESHOLD = 3;
 
@@ -77,13 +77,13 @@ public class umaPower extends AbstractPower {
 //            }
 //        }
 //        if (this.amount >= 10){
-//            this.addToTop(new ApplyPowerAction(this.owner, this.owner, new LeaderPower(this.owner)));
+//            this.addToTop(new ApplyPowerAction(this.owner, this.owner, new UmaPaceFrontPower(this.owner)));
 //        }else if (this.amount >= 0){
-//            this.addToTop(new ApplyPowerAction(this.owner, this.owner, new FrontRunnerPower(this.owner)));
+//            this.addToTop(new ApplyPowerAction(this.owner, this.owner, new UmaPacePacePower(this.owner)));
 //        }else  if (this.amount >= -10){
-//            this.addToTop(new ApplyPowerAction(this.owner, this.owner, new ChaserPower(this.owner)));
+//            this.addToTop(new ApplyPowerAction(this.owner, this.owner, new UmaPaceEndPower(this.owner)));
 //        }else {
-//            this.addToTop(new ApplyPowerAction(this.owner, this.owner, new StalkerPower(this.owner)));
+//            this.addToTop(new ApplyPowerAction(this.owner, this.owner, new UmaPaceLatePower(this.owner)));
 //        }
 //    }
 
