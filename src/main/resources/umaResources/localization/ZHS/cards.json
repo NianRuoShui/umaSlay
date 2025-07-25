@@ -95,5 +95,9 @@
   "UmaMod:VictoryPremonition":{
     "NAME": "胜利的预感",
     "DESCRIPTION":"领域， NL 获得两点能量[E][E], NL 抽两张牌， NL 获得双倍伤害"
+  },
+  "UmaMod:PowerfulStrike": {
+    "NAME": "有力一击",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害, 为玩家添加 !M! 点虚弱"
   }
 }
