@@ -12,9 +12,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.FrailPower;
-import umamusume.powers.UmaPaceEndPower;
-import umamusume.powers.UmaPaceFrontPower;
 import umamusume.powers.UmaPaceLatePower;
+import umamusume.powers.UmaPacePacePower;
 
 import static umamusume.characters.Oguri.PlayerColorEnum.Uma_Oguri_Orange;
 
@@ -29,7 +28,6 @@ public class PowerfulStrike extends CustomCard {
     private static final CardColor COLOR = Uma_Oguri_Orange; // 卡牌颜色（与角色颜色一致）
     private static final CardRarity RARITY = CardRarity.COMMON; // 卡牌稀有度（基础、普通、罕见、稀有、特殊等）
     private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final int CONDITIONAL_COST_F = 1;
     private static final int BASE_DAMAGE = 8;
     private static final int BASE_MAGIC_NUMBER = 2;
 
@@ -63,21 +61,10 @@ public class PowerfulStrike extends CustomCard {
         this.baseMagicNumber = this.upgraded ? (BASE_MAGIC_NUMBER - 1) : BASE_MAGIC_NUMBER;
         super.applyPowers();
 
-        if (AbstractDungeon.player.hasPower(UmaPaceFrontPower.POWER_ID)){
-            this.damage += 2;
-            this.isDamageModified = false;
-            this.magicNumber += 2;
-            this.setCostForTurn(CONDITIONAL_COST_F);
-        } else if (AbstractDungeon.player.hasPower(UmaPaceLatePower. POWER_ID)) {
+        if (AbstractDungeon.player.hasPower(UmaPaceLatePower.POWER_ID)) {
             this.damage -= 2;
             this.magicNumber -= 1;
             this.isDamageModified = false;
-        } else if (AbstractDungeon.player.hasPower(UmaPaceEndPower.POWER_ID)) {
-            this.damage -= 4;
-            this.magicNumber -= 2;
-            this.isDamageModified = false;
-        }
-        else{
         }
     }
 
@@ -86,18 +73,13 @@ public class PowerfulStrike extends CustomCard {
     public void calculateCardDamage(AbstractMonster m){
         super.calculateCardDamage(m);
         this.baseDamage = this.upgraded ? (BASE_DAMAGE + 2) : BASE_DAMAGE;
-        if (AbstractDungeon.player.hasPower(UmaPaceFrontPower.POWER_ID)){
+        if (AbstractDungeon.player.hasPower(UmaPacePacePower.POWER_ID)){
             this.damage += 2;
             this.isDamageModified = false;
             this.magicNumber += 2;
-            this.setCostForTurn(CONDITIONAL_COST_F);
-        } else if (AbstractDungeon.player.hasPower(UmaPaceEndPower.POWER_ID)) {
+        } else if (AbstractDungeon.player.hasPower(UmaPaceLatePower.POWER_ID)) {
             this.damage -= 4;
             this.magicNumber -= 2;
-            this.isDamageModified = false;
-        }else {
-            this.damage = this.baseDamage;
-            this.magicNumber = this.baseMagicNumber;
             this.isDamageModified = false;
         }
     }

@@ -24,12 +24,12 @@
     ]
   },
   "UmaMod:UmaPacePacePower": {
-    "NAME": "跑法:先/差",
+    "NAME": "跑法:先",
     "DESCRIPTIONS":[
       "先行或者居中,回合开始获得1层敏捷。"
     ]
   },
-  "UmaMod:StalkerPower": {
+  "UmaMod:UmaPaceLatePower": {
     "NAME": "跑法:差",
     "DESCRIPTIONS":[
       "居中,回合开始随机一名敌人获得1层易伤。"
