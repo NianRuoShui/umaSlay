@@ -66,21 +66,24 @@ public class PowerfulStrike extends CustomCard {
             this.magicNumber -= 1;
             this.isDamageModified = false;
         }
+         else{
+            this.damage = this.baseDamage;
+            this.magicNumber = baseMagicNumber;
+        }
     }
 
 
     @Override
-    public void calculateCardDamage(AbstractMonster m){
+    public void calculateCardDamage(AbstractMonster m) {
         super.calculateCardDamage(m);
         this.baseDamage = this.upgraded ? (BASE_DAMAGE + 2) : BASE_DAMAGE;
-        if (AbstractDungeon.player.hasPower(UmaPacePacePower.POWER_ID)){
-            this.damage += 2;
-            this.isDamageModified = false;
-            this.magicNumber += 2;
-        } else if (AbstractDungeon.player.hasPower(UmaPaceLatePower.POWER_ID)) {
+        if (AbstractDungeon.player.hasPower(UmaPaceLatePower.POWER_ID)) {
             this.damage -= 4;
             this.magicNumber -= 2;
             this.isDamageModified = false;
+        } else{
+            this.damage = this.baseDamage;
+            this.magicNumber = baseMagicNumber;
         }
     }
 

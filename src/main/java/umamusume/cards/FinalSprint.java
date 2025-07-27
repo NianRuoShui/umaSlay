@@ -1,5 +1,6 @@
 package umamusume.cards;
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import umamusume.powers.FinalSprintPower;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;

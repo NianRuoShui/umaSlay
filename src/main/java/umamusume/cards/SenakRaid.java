@@ -63,6 +63,10 @@ public class SenakRaid extends CustomCard {
             this.magicNumber += 2;
             this.isDamageModified = false;
         }
+         else{
+            this.damage = this.baseDamage;
+            this.magicNumber = baseMagicNumber;
+        }
     }
 
 
@@ -74,6 +78,10 @@ public class SenakRaid extends CustomCard {
             this.damage -= 2;
             this.magicNumber += 2;
             this.isDamageModified = false;
+        }
+        else{
+            this.damage = this.baseDamage;
+            this.magicNumber = baseMagicNumber;
         }
     }
 
