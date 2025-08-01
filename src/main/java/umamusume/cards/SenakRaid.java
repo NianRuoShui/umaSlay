@@ -61,11 +61,11 @@ public class SenakRaid extends CustomCard {
         if (AbstractDungeon.player.hasPower(UmaPaceLatePower.POWER_ID)) {
             this.damage -= 2;
             this.magicNumber += 2;
-            this.isDamageModified = false;
+            this.isDamageModified = true;
         }
          else{
             this.damage = this.baseDamage;
-            this.magicNumber = baseMagicNumber;
+            this.magicNumber = this.baseMagicNumber;
         }
     }
 
@@ -77,11 +77,11 @@ public class SenakRaid extends CustomCard {
         if (AbstractDungeon.player.hasPower(UmaPaceLatePower.POWER_ID)) {
             this.damage -= 2;
             this.magicNumber += 2;
-            this.isDamageModified = false;
+            this.isDamageModified = true;
         }
         else{
             this.damage = this.baseDamage;
-            this.magicNumber = baseMagicNumber;
+            this.magicNumber = this.baseMagicNumber;
         }
     }
 
